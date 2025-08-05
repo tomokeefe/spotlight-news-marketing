@@ -125,7 +125,7 @@ const Students = () => {
               <h2 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-8 leading-tight">
                 Track your reading.
                 <br />
-                <span className="text-neon-green">Stay sharp.</span>
+                <span className="text-electric-blue">Stay sharp.</span>
               </h2>
               <p className="text-xl text-soft-gray/70 mb-8 leading-relaxed">
                 MyStats helps you set goals, track progress, and outsmart
@@ -133,26 +133,26 @@ const Students = () => {
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-neon-green mr-3" />
+                  <CheckCircle className="w-5 h-5 text-electric-blue mr-3" />
                   <span className="text-soft-gray/80">
                     Reading time tracking
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-neon-green mr-3" />
+                  <CheckCircle className="w-5 h-5 text-electric-blue mr-3" />
                   <span className="text-soft-gray/80">
                     Goal setting & progress
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-neon-green mr-3" />
+                  <CheckCircle className="w-5 h-5 text-electric-blue mr-3" />
                   <span className="text-soft-gray/80">Focus insights</span>
                 </div>
               </div>
               <Link to="/dashboard">
                 <Button
                   variant="outline"
-                  className="border-neon-green text-neon-green hover:bg-neon-green hover:text-midnight-black font-medium px-8 py-4 rounded-full"
+                  className="border-electric-blue text-electric-blue hover:bg-electric-blue hover:text-midnight-black font-medium px-8 py-4 rounded-full"
                 >
                   View demo
                 </Button>
@@ -166,7 +166,7 @@ const Students = () => {
               <h2 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-8 leading-tight">
                 Read articles.
                 <br />
-                <span className="text-vibrant-pink">Win prizes.</span>
+                <span className="text-electric-blue">Win prizes.</span>
               </h2>
               <p className="text-xl text-soft-gray/70 mb-8 leading-relaxed">
                 Join reading challenges and win real rewards. AirPods, iPads,
@@ -174,24 +174,24 @@ const Students = () => {
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-vibrant-pink mr-3" />
+                  <CheckCircle className="w-5 h-5 text-electric-blue mr-3" />
                   <span className="text-soft-gray/80">Monthly challenges</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-vibrant-pink mr-3" />
+                  <CheckCircle className="w-5 h-5 text-electric-blue mr-3" />
                   <span className="text-soft-gray/80">
                     Real prizes: AirPods, iPads
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-vibrant-pink mr-3" />
+                  <CheckCircle className="w-5 h-5 text-electric-blue mr-3" />
                   <span className="text-soft-gray/80">Achievement badges</span>
                 </div>
               </div>
               <Link to="/challenge">
                 <Button
                   variant="outline"
-                  className="border-vibrant-pink text-vibrant-pink hover:bg-vibrant-pink hover:text-midnight-black font-medium px-8 py-4 rounded-full"
+                  className="border-electric-blue text-electric-blue hover:bg-electric-blue hover:text-midnight-black font-medium px-8 py-4 rounded-full"
                 >
                   Join challenge
                 </Button>
