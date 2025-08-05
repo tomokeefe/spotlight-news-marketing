@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 
 const Index = () => {
   return (
@@ -288,117 +289,7 @@ const Index = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-midnight-black border-t border-gray-800/50 py-16">
-        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-12">
-            <div className="mb-4 flex justify-center">
-              <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2F33482e5d334548d19dc3d9d06ed75615?format=webp&width=800"
-                alt="Spotlight News"
-                className="h-8 w-auto"
-                style={{ filter: 'brightness(0) saturate(100%) invert(50%) sepia(100%) saturate(2000%) hue-rotate(154deg) brightness(119%) contrast(119%)' }}
-              />
-            </div>
-            <p className="text-soft-gray/60 max-w-md mx-auto">
-              Delivering news, cutting chaos. The anti-algo rebels making news
-              engaging and discourse meaningful.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-12">
-            <div>
-              <h4 className="font-semibold text-soft-gray mb-4">Audiences</h4>
-              <div className="space-y-2">
-                <Link
-                  to="/students"
-                  className="block text-soft-gray/60 hover:text-electric-blue text-sm transition-colors"
-                >
-                  For Students
-                </Link>
-                <Link
-                  to="/publishers"
-                  className="block text-soft-gray/60 hover:text-electric-blue text-sm transition-colors"
-                >
-                  For Publishers
-                </Link>
-                <Link
-                  to="/universities"
-                  className="block text-soft-gray/60 hover:text-electric-blue text-sm transition-colors"
-                >
-                  For Universities
-                </Link>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-soft-gray mb-4">Company</h4>
-              <div className="space-y-2">
-                <Link
-                  to="/about"
-                  className="block text-soft-gray/60 hover:text-electric-blue text-sm transition-colors"
-                >
-                  About
-                </Link>
-                <Link
-                  to="/blog"
-                  className="block text-soft-gray/60 hover:text-electric-blue text-sm transition-colors"
-                >
-                  Blog
-                </Link>
-                <Link
-                  to="/contact"
-                  className="block text-soft-gray/60 hover:text-electric-blue text-sm transition-colors"
-                >
-                  Contact
-                </Link>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-soft-gray mb-4">Support</h4>
-              <div className="space-y-2">
-                <Link
-                  to="/privacy"
-                  className="block text-soft-gray/60 hover:text-electric-blue text-sm transition-colors"
-                >
-                  Privacy
-                </Link>
-                <Link
-                  to="/terms"
-                  className="block text-soft-gray/60 hover:text-electric-blue text-sm transition-colors"
-                >
-                  Terms
-                </Link>
-              </div>
-            </div>
-
-            <div>
-              <h4 className="font-semibold text-soft-gray mb-4">Get the App</h4>
-              <div className="space-y-2">
-                <Link
-                  to="/get-app"
-                  className="block text-soft-gray/60 hover:text-electric-blue text-sm transition-colors"
-                >
-                  Download
-                </Link>
-                <Link
-                  to="/onboarding"
-                  className="block text-soft-gray/60 hover:text-electric-blue text-sm transition-colors"
-                >
-                  Try Online
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          <div className="border-t border-gray-800/50 pt-8 text-center">
-            <p className="text-soft-gray/50 text-sm">
-              © 2025 Spotlight Media Labs. All rights reserved.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
