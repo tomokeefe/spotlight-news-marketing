@@ -115,7 +115,7 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
                   <Button
                     variant="ghost"
                     size="sm"
-                    className="text-soft-gray hover:text-electric-blue font-medium text-sm"
+                    className="text-soft-gray hover:text-electric-blue hover:bg-transparent font-medium text-sm"
                   >
                     Sign In
                   </Button>
