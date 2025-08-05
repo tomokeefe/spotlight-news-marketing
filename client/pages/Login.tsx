@@ -4,6 +4,7 @@ import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Link, useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import Footer from "@/components/Footer";
 import { useAuth } from "@/lib/auth";
 import {
   Mail,
@@ -523,23 +524,7 @@ const Login = () => {
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-midnight-black border-t border-gray-800 py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center">
-            <Link
-              to="/"
-              className="text-2xl font-display font-bold text-electric-blue text-glow-blue mb-4 block"
-            >
-              Spotlight News
-            </Link>
-            <p className="text-soft-gray/80">
-              Delivering news, cutting chaos. The anti-algo rebels making news
-              engaging and discourse meaningful.
-            </p>
-          </div>
-        </div>
-      </footer>
+      <Footer />
     </div>
   );
 };
