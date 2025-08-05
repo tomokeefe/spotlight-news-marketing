@@ -17,6 +17,8 @@ const Index = () => {
           muted
           loop
           playsInline
+          preload="auto"
+          webkit-playsinline="true"
           className="absolute inset-0 w-full h-full object-cover z-0"
         >
           <source
