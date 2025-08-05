@@ -274,13 +274,13 @@ const Students = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24">
+      <section className="py-24" style={{ backgroundColor: '#008888' }}>
         <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-8">
+          <h2 className="text-5xl sm:text-6xl font-display font-bold text-white mb-8">
             Ready to take control of <br />
             <span className="text-electric-blue">your feed</span>?
           </h2>
-          <p className="text-xl text-soft-gray/70 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
             Join thousands of students who've ditched the algorithm and built
             better news habits.
           </p>
@@ -288,7 +288,7 @@ const Students = () => {
             <Link to="/get-app">
               <Button
                 size="lg"
-                className="bg-electric-blue text-midnight-black hover:bg-cyan-400 font-semibold text-lg px-10 py-5 rounded-full"
+                className="bg-white text-[#008888] hover:bg-gray-100 font-semibold text-lg px-10 py-5 rounded-full border-2 border-white"
               >
                 Download the app
               </Button>
@@ -297,7 +297,7 @@ const Students = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-electric-blue text-electric-blue hover:bg-electric-blue hover:text-midnight-black font-semibold text-lg px-10 py-5 rounded-full"
+                className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#008888] font-semibold text-lg px-10 py-5 rounded-full"
               >
                 Check campus access
               </Button>
