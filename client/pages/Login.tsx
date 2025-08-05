@@ -2,8 +2,9 @@ import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import Navigation from "@/components/Navigation";
+import { useAuth } from "@/lib/auth";
 import {
   Mail,
   Lock,
@@ -32,6 +33,8 @@ const Login = () => {
   });
   const [errors, setErrors] = useState<{ [key: string]: string }>({});
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const { login, signup } = useAuth();
+  const navigate = useNavigate();
 
   const universities = [
     "Michigan State University",
@@ -80,18 +83,20 @@ const Login = () => {
 
     setIsSubmitting(true);
 
-    // Simulate API call
     try {
-      await new Promise((resolve) => setTimeout(resolve, 2000));
-
-      // For demo purposes, just redirect
       if (isSignUp) {
-        // New users go to onboarding
-        window.location.href = "/onboarding";
+        await signup({
+          email: formData.email,
+          password: formData.password,
+          firstName: formData.firstName,
+          lastName: formData.lastName,
+          university: formData.university,
+          studentId: formData.studentId,
+        });
+        navigate("/onboarding");
       } else {
-        // Existing users go to dashboard
-        alert("Login successful! Redirecting to your dashboard...");
-        window.location.href = "/";
+        await login(formData.email, formData.password);
+        navigate("/dashboard");
       }
     } catch (error) {
       setErrors({ submit: "Something went wrong. Please try again." });
