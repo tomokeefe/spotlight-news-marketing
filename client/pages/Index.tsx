@@ -13,18 +13,26 @@ const Index = () => {
       <section className="relative pt-20 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Video Background */}
         <video
-          autoPlay
-          muted
-          loop
-          playsInline
+          autoPlay={true}
+          muted={true}
+          loop={true}
+          playsInline={true}
+          controls={false}
           preload="auto"
           webkit-playsinline="true"
+          data-object-fit="cover"
           className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
         >
           <source
             src="https://www.dropbox.com/scl/fi/fdo3go2qmcebnmbxa0rrk/4990232-hd_1920_1080_30fps.mp4?rlkey=vwy1wyw8sibos4mu3lj4tice0&dl=1"
             type="video/mp4"
           />
+          Your browser does not support the video tag.
         </video>
 
         {/* Overlay Tint */}

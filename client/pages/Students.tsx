@@ -21,18 +21,26 @@ const Students = () => {
       <section className="relative pt-20 pb-32 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Video Background */}
         <video
-          autoPlay
-          muted
-          loop
-          playsInline
+          autoPlay={true}
+          muted={true}
+          loop={true}
+          playsInline={true}
+          controls={false}
           preload="auto"
           webkit-playsinline="true"
+          data-object-fit="cover"
           className="absolute inset-0 w-full h-full object-cover z-0"
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover'
+          }}
         >
           <source
             src="https://www.dropbox.com/scl/fi/pw2f6oc722jhefbcoeswf/6835556-sd_960_540_25fps.mp4?rlkey=7qgjg12n0amowq4rlt36w927u&dl=1"
             type="video/mp4"
           />
+          Your browser does not support the video tag.
         </video>
 
         {/* Overlay Tint */}
