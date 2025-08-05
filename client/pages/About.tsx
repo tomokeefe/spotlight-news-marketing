@@ -81,11 +81,11 @@ const About = () => {
             </div>
             <div className="order-1 md:order-2">
               <h2 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-8 leading-tight">
-                What drives <span className="text-neon-green">us.</span>
+                What drives <span className="text-electric-blue">us.</span>
               </h2>
               <div className="space-y-6">
                 <div>
-                  <h3 className="text-xl font-semibold text-neon-green mb-2">
+                  <h3 className="text-xl font-semibold text-electric-blue mb-2">
                     Quality First
                   </h3>
                   <p className="text-soft-gray/70">
@@ -94,7 +94,7 @@ const About = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-neon-green mb-2">
+                  <h3 className="text-xl font-semibold text-electric-blue mb-2">
                     User Control
                   </h3>
                   <p className="text-soft-gray/70">
@@ -103,7 +103,7 @@ const About = () => {
                   </p>
                 </div>
                 <div>
-                  <h3 className="text-xl font-semibold text-neon-green mb-2">
+                  <h3 className="text-xl font-semibold text-electric-blue mb-2">
                     Fair Revenue
                   </h3>
                   <p className="text-soft-gray/70">
@@ -119,7 +119,7 @@ const About = () => {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-8 leading-tight">
-                Making an <span className="text-vibrant-pink">impact.</span>
+                Making an <span className="text-electric-blue">impact.</span>
               </h2>
               <p className="text-xl text-soft-gray/70 mb-8 leading-relaxed">
                 From Michigan State University's 5,000+ engaged students to
@@ -128,7 +128,7 @@ const About = () => {
               </p>
               <div className="grid grid-cols-2 gap-6 mb-8">
                 <div>
-                  <div className="text-3xl font-bold text-vibrant-pink mb-1">
+                  <div className="text-3xl font-bold text-electric-blue mb-1">
                     250K+
                   </div>
                   <div className="text-soft-gray/60 text-sm">
@@ -136,7 +136,7 @@ const About = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-vibrant-pink mb-1">
+                  <div className="text-3xl font-bold text-electric-blue mb-1">
                     300+
                   </div>
                   <div className="text-soft-gray/60 text-sm">
@@ -144,7 +144,7 @@ const About = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-vibrant-pink mb-1">
+                  <div className="text-3xl font-bold text-electric-blue mb-1">
                     500+
                   </div>
                   <div className="text-soft-gray/60 text-sm">
@@ -152,7 +152,7 @@ const About = () => {
                   </div>
                 </div>
                 <div>
-                  <div className="text-3xl font-bold text-vibrant-pink mb-1">
+                  <div className="text-3xl font-bold text-electric-blue mb-1">
                     70%
                   </div>
                   <div className="text-soft-gray/60 text-sm">
@@ -163,7 +163,7 @@ const About = () => {
               <Link to="/contact">
                 <Button
                   variant="outline"
-                  className="border-vibrant-pink text-vibrant-pink hover:bg-vibrant-pink hover:text-midnight-black font-medium px-8 py-4 rounded-full"
+                  className="border-electric-blue text-electric-blue hover:bg-electric-blue hover:text-midnight-black font-medium px-8 py-4 rounded-full"
                 >
                   Partner with us
                 </Button>
