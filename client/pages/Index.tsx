@@ -280,7 +280,7 @@ const Index = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-2 border-white text-white hover:bg-white hover:text-[#008888] font-semibold text-lg px-10 py-5 rounded-full"
+                className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#008888] font-semibold text-lg px-10 py-5 rounded-full"
               >
                 Try online
               </Button>
