@@ -164,46 +164,46 @@ const Pricing = () => {
       <section className="py-24 bg-gray-900/50">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl sm:text-5xl font-display font-bold text-soft-gray mb-8">
-            Need something <span className="text-vibrant-pink">bigger</span>?
+            Need something <span className="text-electric-blue">bigger</span>?
           </h2>
           <p className="text-xl text-soft-gray/70 mb-12 max-w-2xl mx-auto">
             Custom solutions for universities and enterprise organizations.
           </p>
 
           <div className="bg-gray-800/30 rounded-2xl p-12 mb-12">
-            <h3 className="text-2xl font-display font-bold text-vibrant-pink mb-6">
+            <h3 className="text-2xl font-display font-bold text-electric-blue mb-6">
               University & Enterprise
             </h3>
             <div className="grid md:grid-cols-2 gap-8 text-left mb-8">
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <Check className="w-5 h-5 text-vibrant-pink mr-3" />
+                  <Check className="w-5 h-5 text-electric-blue mr-3" />
                   <span className="text-soft-gray/80">
                     Bulk student subscriptions
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <Check className="w-5 h-5 text-vibrant-pink mr-3" />
+                  <Check className="w-5 h-5 text-electric-blue mr-3" />
                   <span className="text-soft-gray/80">Custom branding</span>
                 </div>
                 <div className="flex items-center">
-                  <Check className="w-5 h-5 text-vibrant-pink mr-3" />
+                  <Check className="w-5 h-5 text-electric-blue mr-3" />
                   <span className="text-soft-gray/80">Dedicated support</span>
                 </div>
               </div>
               <div className="space-y-4">
                 <div className="flex items-center">
-                  <Check className="w-5 h-5 text-vibrant-pink mr-3" />
+                  <Check className="w-5 h-5 text-electric-blue mr-3" />
                   <span className="text-soft-gray/80">Analytics dashboard</span>
                 </div>
                 <div className="flex items-center">
-                  <Check className="w-5 h-5 text-vibrant-pink mr-3" />
+                  <Check className="w-5 h-5 text-electric-blue mr-3" />
                   <span className="text-soft-gray/80">
                     Alumni extension options
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <Check className="w-5 h-5 text-vibrant-pink mr-3" />
+                  <Check className="w-5 h-5 text-electric-blue mr-3" />
                   <span className="text-soft-gray/80">
                     Implementation support
                   </span>
@@ -211,7 +211,7 @@ const Pricing = () => {
               </div>
             </div>
             <Link to="/contact">
-              <Button className="bg-vibrant-pink text-midnight-black hover:bg-pink-400 font-semibold px-8 py-4 rounded-full">
+              <Button className="bg-electric-blue text-midnight-black hover:bg-cyan-400 font-semibold px-8 py-4 rounded-full">
                 Contact sales
               </Button>
             </Link>
