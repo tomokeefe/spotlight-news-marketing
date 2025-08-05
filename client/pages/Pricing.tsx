@@ -275,24 +275,24 @@ const Pricing = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24 bg-gray-900/30">
+      <section className="py-24" style={{ backgroundColor: '#008888' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-8">
+          <h2 className="text-5xl sm:text-6xl font-display font-bold text-white mb-8">
             Ready to break through <br />
             <span className="text-electric-blue">the paywalls</span>?
           </h2>
-          <p className="text-xl text-soft-gray/70 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
             Start your free trial today. No credit card required.
           </p>
           <Link to="/get-app">
             <Button
               size="lg"
-              className="bg-electric-blue text-midnight-black hover:bg-cyan-400 font-semibold text-lg px-10 py-5 rounded-full"
+              className="bg-white text-[#008888] hover:bg-gray-100 font-semibold text-lg px-10 py-5 rounded-full border-2 border-white"
             >
               Try Premium free
             </Button>
           </Link>
-          <p className="text-sm text-soft-gray/50 mt-8">
+          <p className="text-sm text-white/70 mt-8">
             * 30-day free trial. Cancel anytime.
           </p>
         </div>

@@ -212,13 +212,13 @@ const About = () => {
       </section>
 
       {/* Final CTA */}
-      <section className="py-24">
+      <section className="py-24" style={{ backgroundColor: '#008888' }}>
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-          <h2 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-8">
+          <h2 className="text-5xl sm:text-6xl font-display font-bold text-white mb-8">
             Ready to be part of <br />
             <span className="text-electric-blue">the movement</span>?
           </h2>
-          <p className="text-xl text-soft-gray/70 mb-12 max-w-2xl mx-auto">
+          <p className="text-xl text-white/90 mb-12 max-w-2xl mx-auto">
             Whether you're a student, publisher, or university, there's a place
             for you in our mission.
           </p>
@@ -226,7 +226,7 @@ const About = () => {
             <Link to="/get-app">
               <Button
                 size="lg"
-                className="bg-electric-blue text-midnight-black hover:bg-cyan-400 font-semibold text-lg px-10 py-5 rounded-full"
+                className="bg-white text-[#008888] hover:bg-gray-100 font-semibold text-lg px-10 py-5 rounded-full border-2 border-white"
               >
                 Download the app
               </Button>
@@ -235,7 +235,7 @@ const About = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-soft-gray text-soft-gray hover:bg-soft-gray hover:text-midnight-black font-semibold text-lg px-10 py-5 rounded-full"
+                className="border-2 border-white text-white bg-transparent hover:bg-white hover:text-[#008888] font-semibold text-lg px-10 py-5 rounded-full"
               >
                 Get in touch
               </Button>
