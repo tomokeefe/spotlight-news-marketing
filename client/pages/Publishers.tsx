@@ -118,7 +118,7 @@ const Publishers = () => {
               <h2 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-8 leading-tight">
                 Reach readers who
                 <br />
-                <span className="text-electric-blue">actually care.</span>
+                <span className="text-neon-green">actually care.</span>
               </h2>
               <p className="text-xl text-soft-gray/70 mb-8 leading-relaxed">
                 Connect with engaged students and alumni who value quality
@@ -127,17 +127,17 @@ const Publishers = () => {
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-electric-blue mr-3" />
+                  <CheckCircle className="w-5 h-5 text-neon-green mr-3" />
                   <span className="text-soft-gray/80">250K+ active users</span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-electric-blue mr-3" />
+                  <CheckCircle className="w-5 h-5 text-neon-green mr-3" />
                   <span className="text-soft-gray/80">
                     500+ university partnerships
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-electric-blue mr-3" />
+                  <CheckCircle className="w-5 h-5 text-neon-green mr-3" />
                   <span className="text-soft-gray/80">
                     High engagement rates
                   </span>
@@ -145,7 +145,7 @@ const Publishers = () => {
               </div>
               <Button
                 variant="outline"
-                className="border-electric-blue text-electric-blue hover:bg-electric-blue hover:text-midnight-black font-medium px-8 py-4 rounded-full"
+                className="border-neon-green text-neon-green hover:bg-neon-green hover:text-midnight-black font-medium px-8 py-4 rounded-full"
               >
                 See audience data
               </Button>
@@ -158,7 +158,7 @@ const Publishers = () => {
               <h2 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-8 leading-tight">
                 Zero tech headaches.
                 <br />
-                <span className="text-vibrant-pink">Maximum reach.</span>
+                <span className="text-neon-green">Maximum reach.</span>
               </h2>
               <p className="text-xl text-soft-gray/70 mb-8 leading-relaxed">
                 We handle RSS feeds, app integration, and branding. You focus on
@@ -167,19 +167,19 @@ const Publishers = () => {
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-vibrant-pink mr-3" />
+                  <CheckCircle className="w-5 h-5 text-neon-green mr-3" />
                   <span className="text-soft-gray/80">
                     Simple RSS integration
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-vibrant-pink mr-3" />
+                  <CheckCircle className="w-5 h-5 text-neon-green mr-3" />
                   <span className="text-soft-gray/80">
                     Equal platform visibility
                   </span>
                 </div>
                 <div className="flex items-center">
-                  <CheckCircle className="w-5 h-5 text-vibrant-pink mr-3" />
+                  <CheckCircle className="w-5 h-5 text-neon-green mr-3" />
                   <span className="text-soft-gray/80">
                     24/7 technical support
                   </span>
@@ -187,7 +187,7 @@ const Publishers = () => {
               </div>
               <Button
                 variant="outline"
-                className="border-vibrant-pink text-vibrant-pink hover:bg-vibrant-pink hover:text-midnight-black font-medium px-8 py-4 rounded-full"
+                className="border-neon-green text-neon-green hover:bg-neon-green hover:text-midnight-black font-medium px-8 py-4 rounded-full"
               >
                 Technical details
               </Button>
