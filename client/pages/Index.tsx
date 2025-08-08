@@ -139,11 +139,13 @@ const Index = () => {
                 </Button>
               </Link>
             </div>
-            <div className="bg-gradient-to-br from-electric-blue/20 to-vibrant-pink/20 rounded-3xl p-12 h-80 flex items-center justify-center overflow-hidden">
+            <div className="rounded-3xl overflow-hidden">
               <img
-                src="https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2F61dcb29404b54e3294abf0a058330ed3?format=webp&width=800"
+                src="https://cdn.builder.io/api/v1/image/assets%2F57f3921c477141799725b87f2761d2c2%2F61dcb29404b54e3294abf0a058330ed3?format=webp&width=540&height=320"
                 alt="Spotlight News Feed Preview"
-                className="w-full h-full object-contain rounded-2xl"
+                className="w-full h-auto"
+                width={540}
+                height={320}
               />
             </div>
           </div>
