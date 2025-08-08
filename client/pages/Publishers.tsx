@@ -38,7 +38,7 @@ const Publishers = () => {
           }}
         >
           <source
-            src="https://www.dropbox.com/scl/fi/2azhe4d2bg8fagajywbuw/7722221-hd_1280_720_25fps.mp4?rlkey=qdkaf6lseyouxvh7irhz9cxiy&dl=1"
+            src="https://www.dropbox.com/scl/fi/v5di0kdav8nm27qjh0g9y/8567120-sd_960_506_25fps.mp4?rlkey=uiw9d65wibw4bg5plyn8iee21&dl=1"
             type="video/mp4"
           />
           Your browser does not support the video tag.
