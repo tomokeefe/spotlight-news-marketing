@@ -37,7 +37,7 @@ const Students = () => {
           }}
         >
           <source
-            src="https://www.dropbox.com/scl/fi/pw2f6oc722jhefbcoeswf/6835556-sd_960_540_25fps.mp4?rlkey=7qgjg12n0amowq4rlt36w927u&dl=1"
+            src="https://www.dropbox.com/scl/fi/g0ha4ve4ehurqghuik0gr/5544177-sd_960_540_30fps.mp4?rlkey=5chqndjef7f7f20sx3cf7725o&dl=1"
             type="video/mp4"
           />
           Your browser does not support the video tag.
