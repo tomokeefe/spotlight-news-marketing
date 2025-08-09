@@ -219,125 +219,164 @@ const Index = () => {
       </section>
 
       {/* Audience Sections - Clean Apple style */}
-      <section className="py-24">
-        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center mb-20">
-            <h2 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-6">
+      <section className="py-32 relative overflow-hidden">
+        {/* Background Elements */}
+        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-midnight-black"></div>
+        <div className="absolute top-20 left-10 w-72 h-72 bg-electric-blue/10 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-green/10 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-vibrant-pink/10 rounded-full blur-3xl"></div>
+
+        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Header */}
+          <div className="text-center mb-16">
+            <h2 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-4">
               Built for <span className="text-electric-blue">everyone.</span>
             </h2>
+            <p className="text-xl text-soft-gray/70 max-w-2xl mx-auto">
+              Three distinct experiences, one powerful platform
+            </p>
           </div>
 
-          <div className="space-y-20">
-            {/* Students */}
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div>
-                <h3 className="text-4xl font-display font-bold text-electric-blue mb-6">
-                  For Students
-                </h3>
-                <p className="text-lg text-soft-gray/80 mb-8">
-                  Done with feed chaos? Build a better scroll. Curate news that
-                  hits right— choose your sources, topics, writers. No paywalls,
-                  no distractions.
-                </p>
-                <Link to="/students">
-                  <Button className="bg-electric-blue text-midnight-black hover:bg-cyan-400 font-semibold px-8 py-4 rounded-full">
-                    Get started
-                  </Button>
-                </Link>
-              </div>
-              <div className="relative bg-gradient-to-br from-electric-blue/20 to-cyan-400/20 rounded-3xl p-12 h-80 flex items-center justify-center overflow-hidden border border-electric-blue/20">
-                <div className="absolute inset-0 bg-electric-blue/5"></div>
-                <div className="relative z-10 text-center">
-                  <div className="mb-6">
-                    <BookOpen className="w-20 h-20 text-electric-blue mx-auto mb-4 animate-float" />
-                    <div className="flex justify-center space-x-3 mb-4">
-                      <Smartphone className="w-8 h-8 text-electric-blue/70" />
-                      <Zap className="w-8 h-8 text-electric-blue/70" />
-                      <TrendingUp className="w-8 h-8 text-electric-blue/70" />
+          {/* Interactive Cards Grid */}
+          <div className="grid lg:grid-cols-3 gap-8 mb-16">
+            {/* Students Card */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-electric-blue/20 to-cyan-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <div className="relative bg-gray-800/40 backdrop-blur-xl border border-electric-blue/20 rounded-2xl p-8 h-96 flex flex-col justify-between hover:border-electric-blue/40 hover:bg-gray-800/60 transition-all duration-300 group-hover:scale-105">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <BookOpen className="w-12 h-12 text-electric-blue" />
+                    <div className="px-3 py-1 bg-electric-blue/20 rounded-full">
+                      <span className="text-electric-blue text-sm font-medium">Students</span>
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <div className="text-electric-blue font-semibold text-lg">Custom Feed</div>
-                    <div className="text-electric-blue/70 text-sm">Algorithm-free reading</div>
-                  </div>
-                </div>
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-electric-blue/10 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-cyan-400/10 rounded-full blur-xl"></div>
-              </div>
-            </div>
-
-            {/* Publishers */}
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="relative bg-gradient-to-br from-neon-green/20 to-lime-400/20 rounded-3xl p-12 h-80 flex items-center justify-center overflow-hidden border border-neon-green/20 order-2 md:order-1">
-                <div className="absolute inset-0 bg-neon-green/5"></div>
-                <div className="relative z-10 text-center">
-                  <div className="mb-6">
-                    <DollarSign className="w-20 h-20 text-neon-green mx-auto mb-4 animate-float" />
-                    <div className="flex justify-center space-x-3 mb-4">
-                      <PieChart className="w-8 h-8 text-neon-green/70" />
-                      <Users className="w-8 h-8 text-neon-green/70" />
-                      <BarChart3 className="w-8 h-8 text-neon-green/70" />
+                  <h3 className="text-2xl font-display font-bold text-electric-blue mb-4">
+                    Custom News Feed
+                  </h3>
+                  <p className="text-soft-gray/80 mb-6 text-sm leading-relaxed">
+                    Build your perfect scroll. Choose sources, topics, and writers.
+                    No algorithms, no distractions, just the news you want.
+                  </p>
+                  <div className="grid grid-cols-3 gap-3 mb-6">
+                    <div className="flex flex-col items-center p-3 bg-electric-blue/10 rounded-lg">
+                      <Smartphone className="w-6 h-6 text-electric-blue mb-1" />
+                      <span className="text-xs text-electric-blue/70">Mobile</span>
+                    </div>
+                    <div className="flex flex-col items-center p-3 bg-electric-blue/10 rounded-lg">
+                      <Zap className="w-6 h-6 text-electric-blue mb-1" />
+                      <span className="text-xs text-electric-blue/70">Fast</span>
+                    </div>
+                    <div className="flex flex-col items-center p-3 bg-electric-blue/10 rounded-lg">
+                      <TrendingUp className="w-6 h-6 text-electric-blue mb-1" />
+                      <span className="text-xs text-electric-blue/70">Smart</span>
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <div className="text-neon-green font-semibold text-lg">70% Revenue Share</div>
-                    <div className="text-neon-green/70 text-sm">Growing audience reach</div>
-                  </div>
                 </div>
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-neon-green/10 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-lime-400/10 rounded-full blur-xl"></div>
-              </div>
-              <div className="order-1 md:order-2">
-                <h3 className="text-4xl font-display font-bold text-neon-green mb-6">
-                  For Publishers
-                </h3>
-                <p className="text-lg text-soft-gray/80 mb-8">
-                  Revenue fading? Spotlight brings the win. 70% revenue share,
-                  no tech lift—connect with a fresh audience.
-                </p>
-                <Link to="/publishers">
-                  <Button className="bg-neon-green text-midnight-black hover:bg-lime-400 font-semibold px-8 py-4 rounded-full">
-                    Partner with us
+                <Link to="/students" className="w-full">
+                  <Button className="w-full bg-electric-blue text-midnight-black hover:bg-cyan-400 font-semibold rounded-xl transition-all duration-300">
+                    Get Started
                   </Button>
                 </Link>
               </div>
             </div>
 
-            {/* Universities */}
-            <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div>
-                <h3 className="text-4xl font-display font-bold text-vibrant-pink mb-6">
-                  For Universities
-                </h3>
-                <p className="text-lg text-soft-gray/80 mb-8">
-                  Campus news struggling? Spotlight's your fix. Bulk
-                  subscriptions for thousands of students—boost access,
-                  engagement, no stress.
-                </p>
-                <Link to="/universities">
-                  <Button className="bg-vibrant-pink text-midnight-black hover:bg-pink-400 font-semibold px-8 py-4 rounded-full">
-                    Contact us
+            {/* Publishers Card */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-neon-green/20 to-lime-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <div className="relative bg-gray-800/40 backdrop-blur-xl border border-neon-green/20 rounded-2xl p-8 h-96 flex flex-col justify-between hover:border-neon-green/40 hover:bg-gray-800/60 transition-all duration-300 group-hover:scale-105">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <DollarSign className="w-12 h-12 text-neon-green" />
+                    <div className="px-3 py-1 bg-neon-green/20 rounded-full">
+                      <span className="text-neon-green text-sm font-medium">Publishers</span>
+                    </div>
+                  </div>
+                  <h3 className="text-2xl font-display font-bold text-neon-green mb-4">
+                    Revenue Growth
+                  </h3>
+                  <p className="text-soft-gray/80 mb-6 text-sm leading-relaxed">
+                    70% revenue share with zero tech lift. Connect with engaged
+                    readers and build sustainable income streams.
+                  </p>
+                  <div className="grid grid-cols-3 gap-3 mb-6">
+                    <div className="flex flex-col items-center p-3 bg-neon-green/10 rounded-lg">
+                      <PieChart className="w-6 h-6 text-neon-green mb-1" />
+                      <span className="text-xs text-neon-green/70">Analytics</span>
+                    </div>
+                    <div className="flex flex-col items-center p-3 bg-neon-green/10 rounded-lg">
+                      <Users className="w-6 h-6 text-neon-green mb-1" />
+                      <span className="text-xs text-neon-green/70">Audience</span>
+                    </div>
+                    <div className="flex flex-col items-center p-3 bg-neon-green/10 rounded-lg">
+                      <BarChart3 className="w-6 h-6 text-neon-green mb-1" />
+                      <span className="text-xs text-neon-green/70">Growth</span>
+                    </div>
+                  </div>
+                </div>
+                <Link to="/publishers" className="w-full">
+                  <Button className="w-full bg-neon-green text-midnight-black hover:bg-lime-400 font-semibold rounded-xl transition-all duration-300">
+                    Partner With Us
                   </Button>
                 </Link>
               </div>
-              <div className="relative bg-gradient-to-br from-vibrant-pink/20 to-pink-400/20 rounded-3xl p-12 h-80 flex items-center justify-center overflow-hidden border border-vibrant-pink/20">
-                <div className="absolute inset-0 bg-vibrant-pink/5"></div>
-                <div className="relative z-10 text-center">
-                  <div className="mb-6">
-                    <GraduationCap className="w-20 h-20 text-vibrant-pink mx-auto mb-4 animate-float" />
-                    <div className="flex justify-center space-x-3 mb-4">
-                      <Building2 className="w-8 h-8 text-vibrant-pink/70" />
-                      <Globe className="w-8 h-8 text-vibrant-pink/70" />
-                      <Shield className="w-8 h-8 text-vibrant-pink/70" />
+            </div>
+
+            {/* Universities Card */}
+            <div className="group relative">
+              <div className="absolute inset-0 bg-gradient-to-br from-vibrant-pink/20 to-pink-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
+              <div className="relative bg-gray-800/40 backdrop-blur-xl border border-vibrant-pink/20 rounded-2xl p-8 h-96 flex flex-col justify-between hover:border-vibrant-pink/40 hover:bg-gray-800/60 transition-all duration-300 group-hover:scale-105">
+                <div>
+                  <div className="flex items-center justify-between mb-6">
+                    <GraduationCap className="w-12 h-12 text-vibrant-pink" />
+                    <div className="px-3 py-1 bg-vibrant-pink/20 rounded-full">
+                      <span className="text-vibrant-pink text-sm font-medium">Universities</span>
                     </div>
                   </div>
-                  <div className="space-y-2">
-                    <div className="text-vibrant-pink font-semibold text-lg">Campus Integration</div>
-                    <div className="text-vibrant-pink/70 text-sm">Bulk student access</div>
+                  <h3 className="text-2xl font-display font-bold text-vibrant-pink mb-4">
+                    Campus Integration
+                  </h3>
+                  <p className="text-soft-gray/80 mb-6 text-sm leading-relaxed">
+                    Bulk subscriptions for thousands of students. Boost access,
+                    engagement, and news literacy across your campus.
+                  </p>
+                  <div className="grid grid-cols-3 gap-3 mb-6">
+                    <div className="flex flex-col items-center p-3 bg-vibrant-pink/10 rounded-lg">
+                      <Building2 className="w-6 h-6 text-vibrant-pink mb-1" />
+                      <span className="text-xs text-vibrant-pink/70">Campus</span>
+                    </div>
+                    <div className="flex flex-col items-center p-3 bg-vibrant-pink/10 rounded-lg">
+                      <Globe className="w-6 h-6 text-vibrant-pink mb-1" />
+                      <span className="text-xs text-vibrant-pink/70">Global</span>
+                    </div>
+                    <div className="flex flex-col items-center p-3 bg-vibrant-pink/10 rounded-lg">
+                      <Shield className="w-6 h-6 text-vibrant-pink mb-1" />
+                      <span className="text-xs text-vibrant-pink/70">Secure</span>
+                    </div>
                   </div>
                 </div>
-                <div className="absolute -top-10 -right-10 w-40 h-40 bg-vibrant-pink/10 rounded-full blur-xl"></div>
-                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-pink-400/10 rounded-full blur-xl"></div>
+                <Link to="/universities" className="w-full">
+                  <Button className="w-full bg-vibrant-pink text-midnight-black hover:bg-pink-400 font-semibold rounded-xl transition-all duration-300">
+                    Contact Us
+                  </Button>
+                </Link>
+              </div>
+            </div>
+          </div>
+
+          {/* Bottom Stats Bar */}
+          <div className="bg-gray-800/30 backdrop-blur-xl border border-soft-gray/10 rounded-2xl p-8">
+            <div className="grid grid-cols-3 gap-8 text-center">
+              <div>
+                <div className="text-3xl font-bold text-electric-blue mb-2">250K+</div>
+                <div className="text-soft-gray/70 text-sm">Active Students</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-neon-green mb-2">300+</div>
+                <div className="text-soft-gray/70 text-sm">Publisher Partners</div>
+              </div>
+              <div>
+                <div className="text-3xl font-bold text-vibrant-pink mb-2">500+</div>
+                <div className="text-soft-gray/70 text-sm">University Partners</div>
               </div>
             </div>
           </div>
