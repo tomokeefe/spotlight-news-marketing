@@ -136,11 +136,11 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-16 items-center mb-20">
             <div>
-              <h3 className="text-4xl font-display font-bold text-soft-gray mb-6">
+              <h3 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-8 leading-tight">
                 Your feed, <br />
                 your <span className="text-electric-blue">choice.</span>
               </h3>
-              <p className="text-lg text-soft-gray/70 mb-8">
+              <p className="text-xl text-soft-gray/70 mb-8 leading-relaxed">
                 Choose your sources, topics, and writers. Create a news
                 experience that's uniquely yours. No algorithmic surprises.
               </p>
@@ -171,11 +171,11 @@ const Index = () => {
               </div>
             </div>
             <div className="order-1 md:order-2">
-              <h3 className="text-4xl font-display font-bold text-soft-gray mb-6">
+              <h3 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-8 leading-tight">
                 Read smart. <br />
                 Get <span className="text-neon-green">rewarded.</span>
               </h3>
-              <p className="text-lg text-soft-gray/70 mb-8">
+              <p className="text-xl text-soft-gray/70 mb-8 leading-relaxed">
                 Track your reading with MyStats. Join challenges. Win real
                 prizes like AirPods and iPads while staying informed.
               </p>
@@ -192,11 +192,11 @@ const Index = () => {
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div>
-              <h3 className="text-4xl font-display font-bold text-soft-gray mb-6">
+              <h3 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-8 leading-tight">
                 One subscription. <br />
                 <span className="text-vibrant-pink">All access.</span>
               </h3>
-              <p className="text-lg text-soft-gray/70 mb-8">
+              <p className="text-xl text-soft-gray/70 mb-8 leading-relaxed">
                 Break through paywalls with a single subscription. Access
                 premium content from hundreds of publications.
               </p>
