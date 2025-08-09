@@ -219,164 +219,192 @@ const Index = () => {
       </section>
 
       {/* Audience Sections - Clean Apple style */}
-      <section className="py-32 relative overflow-hidden">
-        {/* Background Elements */}
-        <div className="absolute inset-0 bg-gradient-to-b from-gray-900/50 to-midnight-black"></div>
-        <div className="absolute top-20 left-10 w-72 h-72 bg-electric-blue/10 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-10 w-96 h-96 bg-neon-green/10 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-64 h-64 bg-vibrant-pink/10 rounded-full blur-3xl"></div>
-
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="py-20 lg:py-32">
+        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Header */}
-          <div className="text-center mb-16">
-            <h2 className="text-5xl sm:text-6xl font-display font-bold text-soft-gray mb-4">
+          <div className="text-center mb-20">
+            <h2 className="text-4xl sm:text-5xl lg:text-6xl font-display font-bold text-white mb-6 tracking-tight">
               Built for <span className="text-electric-blue">everyone.</span>
             </h2>
-            <p className="text-xl text-soft-gray/70 max-w-2xl mx-auto">
-              Three distinct experiences, one powerful platform
+            <p className="text-xl text-soft-gray/80 max-w-3xl mx-auto leading-relaxed">
+              Three distinct experiences, unified by our commitment to quality journalism and user control.
             </p>
           </div>
 
-          {/* Interactive Cards Grid */}
-          <div className="grid lg:grid-cols-3 gap-8 mb-16">
-            {/* Students Card */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-electric-blue/20 to-cyan-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-              <div className="relative bg-gray-800/40 backdrop-blur-xl border border-electric-blue/20 rounded-2xl p-8 h-96 flex flex-col justify-between hover:border-electric-blue/40 hover:bg-gray-800/60 transition-all duration-300 group-hover:scale-105">
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <BookOpen className="w-12 h-12 text-electric-blue" />
-                    <div className="px-3 py-1 bg-electric-blue/20 rounded-full">
-                      <span className="text-electric-blue text-sm font-medium">Students</span>
+          {/* Clean Card Layout */}
+          <div className="space-y-8">
+            {/* Students */}
+            <div className="group bg-white/[0.02] backdrop-blur-xl rounded-[24px] border border-white/[0.08] hover:border-white/[0.12] transition-all duration-500 overflow-hidden">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="p-12 lg:p-16 flex flex-col justify-center">
+                  <div className="inline-flex items-center bg-electric-blue/10 rounded-full px-4 py-2 mb-8 w-fit">
+                    <BookOpen className="w-5 h-5 text-electric-blue mr-2" />
+                    <span className="text-electric-blue text-sm font-medium">For Students</span>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-display font-bold text-white mb-6 leading-tight">
+                    Your news, your way
+                  </h3>
+                  <p className="text-lg text-soft-gray/80 mb-8 leading-relaxed">
+                    Curate your perfect feed. Choose your sources, topics, and writers.
+                    No algorithms deciding what you see—just the news that matters to you.
+                  </p>
+                  <div className="flex flex-wrap gap-3 mb-8">
+                    <div className="flex items-center bg-electric-blue/5 rounded-full px-4 py-2">
+                      <Smartphone className="w-4 h-4 text-electric-blue mr-2" />
+                      <span className="text-electric-blue text-sm">Mobile-first</span>
+                    </div>
+                    <div className="flex items-center bg-electric-blue/5 rounded-full px-4 py-2">
+                      <Zap className="w-4 h-4 text-electric-blue mr-2" />
+                      <span className="text-electric-blue text-sm">Lightning fast</span>
+                    </div>
+                    <div className="flex items-center bg-electric-blue/5 rounded-full px-4 py-2">
+                      <TrendingUp className="w-4 h-4 text-electric-blue mr-2" />
+                      <span className="text-electric-blue text-sm">Smart insights</span>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-display font-bold text-electric-blue mb-4">
-                    Custom News Feed
-                  </h3>
-                  <p className="text-soft-gray/80 mb-6 text-sm leading-relaxed">
-                    Build your perfect scroll. Choose sources, topics, and writers.
-                    No algorithms, no distractions, just the news you want.
-                  </p>
-                  <div className="grid grid-cols-3 gap-3 mb-6">
-                    <div className="flex flex-col items-center p-3 bg-electric-blue/10 rounded-lg">
-                      <Smartphone className="w-6 h-6 text-electric-blue mb-1" />
-                      <span className="text-xs text-electric-blue/70">Mobile</span>
-                    </div>
-                    <div className="flex flex-col items-center p-3 bg-electric-blue/10 rounded-lg">
-                      <Zap className="w-6 h-6 text-electric-blue mb-1" />
-                      <span className="text-xs text-electric-blue/70">Fast</span>
-                    </div>
-                    <div className="flex flex-col items-center p-3 bg-electric-blue/10 rounded-lg">
-                      <TrendingUp className="w-6 h-6 text-electric-blue mb-1" />
-                      <span className="text-xs text-electric-blue/70">Smart</span>
+                  <Link to="/students">
+                    <Button className="bg-electric-blue text-black hover:bg-electric-blue/90 font-semibold text-lg px-8 py-4 rounded-full shadow-lg shadow-electric-blue/20 transition-all duration-300 hover:scale-105 hover:shadow-electric-blue/30">
+                      Get started
+                    </Button>
+                  </Link>
+                </div>
+                <div className="relative lg:min-h-[400px] bg-gradient-to-br from-electric-blue/20 to-electric-blue/5 p-12 lg:p-16 flex items-center justify-center">
+                  <div className="w-full max-w-sm">
+                    <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
+                      <div className="space-y-4">
+                        <div className="flex items-center space-x-3">
+                          <div className="w-10 h-10 bg-electric-blue/20 rounded-full flex items-center justify-center">
+                            <BookOpen className="w-5 h-5 text-electric-blue" />
+                          </div>
+                          <div>
+                            <div className="text-white text-sm font-medium">Custom Feed</div>
+                            <div className="text-white/60 text-xs">300+ sources</div>
+                          </div>
+                        </div>
+                        <div className="h-px bg-white/10"></div>
+                        <div className="text-white/80 text-sm">Reading streak: 12 days</div>
+                        <div className="bg-electric-blue/20 rounded-lg p-3">
+                          <div className="text-electric-blue text-xs font-medium">Challenge: Tech News</div>
+                          <div className="text-white/60 text-xs mt-1">7 articles read • 3 to go</div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <Link to="/students" className="w-full">
-                  <Button className="w-full bg-electric-blue text-midnight-black hover:bg-cyan-400 font-semibold rounded-xl transition-all duration-300">
-                    Get Started
-                  </Button>
-                </Link>
               </div>
             </div>
 
-            {/* Publishers Card */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-green/20 to-lime-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-              <div className="relative bg-gray-800/40 backdrop-blur-xl border border-neon-green/20 rounded-2xl p-8 h-96 flex flex-col justify-between hover:border-neon-green/40 hover:bg-gray-800/60 transition-all duration-300 group-hover:scale-105">
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <DollarSign className="w-12 h-12 text-neon-green" />
-                    <div className="px-3 py-1 bg-neon-green/20 rounded-full">
-                      <span className="text-neon-green text-sm font-medium">Publishers</span>
-                    </div>
-                  </div>
-                  <h3 className="text-2xl font-display font-bold text-neon-green mb-4">
-                    Revenue Growth
-                  </h3>
-                  <p className="text-soft-gray/80 mb-6 text-sm leading-relaxed">
-                    70% revenue share with zero tech lift. Connect with engaged
-                    readers and build sustainable income streams.
-                  </p>
-                  <div className="grid grid-cols-3 gap-3 mb-6">
-                    <div className="flex flex-col items-center p-3 bg-neon-green/10 rounded-lg">
-                      <PieChart className="w-6 h-6 text-neon-green mb-1" />
-                      <span className="text-xs text-neon-green/70">Analytics</span>
-                    </div>
-                    <div className="flex flex-col items-center p-3 bg-neon-green/10 rounded-lg">
-                      <Users className="w-6 h-6 text-neon-green mb-1" />
-                      <span className="text-xs text-neon-green/70">Audience</span>
-                    </div>
-                    <div className="flex flex-col items-center p-3 bg-neon-green/10 rounded-lg">
-                      <BarChart3 className="w-6 h-6 text-neon-green mb-1" />
-                      <span className="text-xs text-neon-green/70">Growth</span>
+            {/* Publishers */}
+            <div className="group bg-white/[0.02] backdrop-blur-xl rounded-[24px] border border-white/[0.08] hover:border-white/[0.12] transition-all duration-500 overflow-hidden">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="relative lg:min-h-[400px] bg-gradient-to-br from-neon-green/20 to-neon-green/5 p-12 lg:p-16 flex items-center justify-center order-2 lg:order-1">
+                  <div className="w-full max-w-sm">
+                    <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
+                      <div className="space-y-4">
+                        <div className="flex items-center justify-between">
+                          <span className="text-white text-sm">Revenue Share</span>
+                          <span className="text-neon-green text-2xl font-bold">70%</span>
+                        </div>
+                        <div className="h-px bg-white/10"></div>
+                        <div className="space-y-3">
+                          <div className="flex justify-between">
+                            <span className="text-white/60 text-xs">Active readers</span>
+                            <span className="text-white text-xs">+23% this month</span>
+                          </div>
+                          <div className="flex justify-between">
+                            <span className="text-white/60 text-xs">Engagement</span>
+                            <span className="text-white text-xs">4.2 min avg</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <Link to="/publishers" className="w-full">
-                  <Button className="w-full bg-neon-green text-midnight-black hover:bg-lime-400 font-semibold rounded-xl transition-all duration-300">
-                    Partner With Us
-                  </Button>
-                </Link>
+                <div className="p-12 lg:p-16 flex flex-col justify-center order-1 lg:order-2">
+                  <div className="inline-flex items-center bg-neon-green/10 rounded-full px-4 py-2 mb-8 w-fit">
+                    <DollarSign className="w-5 h-5 text-neon-green mr-2" />
+                    <span className="text-neon-green text-sm font-medium">For Publishers</span>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-display font-bold text-white mb-6 leading-tight">
+                    Sustainable revenue streams
+                  </h3>
+                  <p className="text-lg text-soft-gray/80 mb-8 leading-relaxed">
+                    Connect with engaged readers who value quality journalism.
+                    70% revenue share with zero technical integration required.
+                  </p>
+                  <div className="flex flex-wrap gap-3 mb-8">
+                    <div className="flex items-center bg-neon-green/5 rounded-full px-4 py-2">
+                      <PieChart className="w-4 h-4 text-neon-green mr-2" />
+                      <span className="text-neon-green text-sm">Real-time analytics</span>
+                    </div>
+                    <div className="flex items-center bg-neon-green/5 rounded-full px-4 py-2">
+                      <Users className="w-4 h-4 text-neon-green mr-2" />
+                      <span className="text-neon-green text-sm">Growing audience</span>
+                    </div>
+                  </div>
+                  <Link to="/publishers">
+                    <Button className="bg-neon-green text-black hover:bg-neon-green/90 font-semibold text-lg px-8 py-4 rounded-full shadow-lg shadow-neon-green/20 transition-all duration-300 hover:scale-105 hover:shadow-neon-green/30">
+                      Partner with us
+                    </Button>
+                  </Link>
+                </div>
               </div>
             </div>
 
-            {/* Universities Card */}
-            <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-vibrant-pink/20 to-pink-400/20 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-300"></div>
-              <div className="relative bg-gray-800/40 backdrop-blur-xl border border-vibrant-pink/20 rounded-2xl p-8 h-96 flex flex-col justify-between hover:border-vibrant-pink/40 hover:bg-gray-800/60 transition-all duration-300 group-hover:scale-105">
-                <div>
-                  <div className="flex items-center justify-between mb-6">
-                    <GraduationCap className="w-12 h-12 text-vibrant-pink" />
-                    <div className="px-3 py-1 bg-vibrant-pink/20 rounded-full">
-                      <span className="text-vibrant-pink text-sm font-medium">Universities</span>
+            {/* Universities */}
+            <div className="group bg-white/[0.02] backdrop-blur-xl rounded-[24px] border border-white/[0.08] hover:border-white/[0.12] transition-all duration-500 overflow-hidden">
+              <div className="grid lg:grid-cols-2 gap-0">
+                <div className="p-12 lg:p-16 flex flex-col justify-center">
+                  <div className="inline-flex items-center bg-vibrant-pink/10 rounded-full px-4 py-2 mb-8 w-fit">
+                    <GraduationCap className="w-5 h-5 text-vibrant-pink mr-2" />
+                    <span className="text-vibrant-pink text-sm font-medium">For Universities</span>
+                  </div>
+                  <h3 className="text-3xl lg:text-4xl font-display font-bold text-white mb-6 leading-tight">
+                    Campus-wide news literacy
+                  </h3>
+                  <p className="text-lg text-soft-gray/80 mb-8 leading-relaxed">
+                    Bulk subscriptions for your entire student body.
+                    Foster informed discourse and critical thinking on campus.
+                  </p>
+                  <div className="flex flex-wrap gap-3 mb-8">
+                    <div className="flex items-center bg-vibrant-pink/5 rounded-full px-4 py-2">
+                      <Building2 className="w-4 h-4 text-vibrant-pink mr-2" />
+                      <span className="text-vibrant-pink text-sm">Campus-wide access</span>
+                    </div>
+                    <div className="flex items-center bg-vibrant-pink/5 rounded-full px-4 py-2">
+                      <Shield className="w-4 h-4 text-vibrant-pink mr-2" />
+                      <span className="text-vibrant-pink text-sm">Enterprise security</span>
                     </div>
                   </div>
-                  <h3 className="text-2xl font-display font-bold text-vibrant-pink mb-4">
-                    Campus Integration
-                  </h3>
-                  <p className="text-soft-gray/80 mb-6 text-sm leading-relaxed">
-                    Bulk subscriptions for thousands of students. Boost access,
-                    engagement, and news literacy across your campus.
-                  </p>
-                  <div className="grid grid-cols-3 gap-3 mb-6">
-                    <div className="flex flex-col items-center p-3 bg-vibrant-pink/10 rounded-lg">
-                      <Building2 className="w-6 h-6 text-vibrant-pink mb-1" />
-                      <span className="text-xs text-vibrant-pink/70">Campus</span>
-                    </div>
-                    <div className="flex flex-col items-center p-3 bg-vibrant-pink/10 rounded-lg">
-                      <Globe className="w-6 h-6 text-vibrant-pink mb-1" />
-                      <span className="text-xs text-vibrant-pink/70">Global</span>
-                    </div>
-                    <div className="flex flex-col items-center p-3 bg-vibrant-pink/10 rounded-lg">
-                      <Shield className="w-6 h-6 text-vibrant-pink mb-1" />
-                      <span className="text-xs text-vibrant-pink/70">Secure</span>
+                  <Link to="/universities">
+                    <Button className="bg-vibrant-pink text-black hover:bg-vibrant-pink/90 font-semibold text-lg px-8 py-4 rounded-full shadow-lg shadow-vibrant-pink/20 transition-all duration-300 hover:scale-105 hover:shadow-vibrant-pink/30">
+                      Contact us
+                    </Button>
+                  </Link>
+                </div>
+                <div className="relative lg:min-h-[400px] bg-gradient-to-br from-vibrant-pink/20 to-vibrant-pink/5 p-12 lg:p-16 flex items-center justify-center">
+                  <div className="w-full max-w-sm">
+                    <div className="bg-white/10 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
+                      <div className="space-y-4">
+                        <div className="text-center">
+                          <div className="text-vibrant-pink text-3xl font-bold">5,000+</div>
+                          <div className="text-white/60 text-sm">Active students</div>
+                        </div>
+                        <div className="h-px bg-white/10"></div>
+                        <div className="grid grid-cols-2 gap-4 text-center">
+                          <div>
+                            <div className="text-white text-lg font-semibold">87%</div>
+                            <div className="text-white/60 text-xs">Engagement rate</div>
+                          </div>
+                          <div>
+                            <div className="text-white text-lg font-semibold">12</div>
+                            <div className="text-white/60 text-xs">Departments</div>
+                          </div>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <Link to="/universities" className="w-full">
-                  <Button className="w-full bg-vibrant-pink text-midnight-black hover:bg-pink-400 font-semibold rounded-xl transition-all duration-300">
-                    Contact Us
-                  </Button>
-                </Link>
-              </div>
-            </div>
-          </div>
-
-          {/* Bottom Stats Bar */}
-          <div className="bg-gray-800/30 backdrop-blur-xl border border-soft-gray/10 rounded-2xl p-8">
-            <div className="grid grid-cols-3 gap-8 text-center">
-              <div>
-                <div className="text-3xl font-bold text-electric-blue mb-2">250K+</div>
-                <div className="text-soft-gray/70 text-sm">Active Students</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-neon-green mb-2">300+</div>
-                <div className="text-soft-gray/70 text-sm">Publisher Partners</div>
-              </div>
-              <div>
-                <div className="text-3xl font-bold text-vibrant-pink mb-2">500+</div>
-                <div className="text-soft-gray/70 text-sm">University Partners</div>
               </div>
             </div>
           </div>
