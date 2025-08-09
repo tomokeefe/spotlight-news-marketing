@@ -3,6 +3,20 @@ import { Button } from "@/components/ui/button";
 import { Link } from "react-router-dom";
 import Navigation from "@/components/Navigation";
 import Footer from "@/components/Footer";
+import {
+  BookOpen,
+  Smartphone,
+  Zap,
+  TrendingUp,
+  DollarSign,
+  PieChart,
+  Users,
+  BarChart3,
+  GraduationCap,
+  Building2,
+  Globe,
+  Shield
+} from "lucide-react";
 
 const Index = () => {
   return (
