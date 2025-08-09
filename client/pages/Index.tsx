@@ -231,19 +231,47 @@ const Index = () => {
                   </Button>
                 </Link>
               </div>
-              <div className="bg-electric-blue/10 rounded-3xl p-12 h-64 flex items-center justify-center">
-                <div className="text-center text-electric-blue/60">
-                  [Student App Mockup]
+              <div className="relative bg-gradient-to-br from-electric-blue/20 to-cyan-400/20 rounded-3xl p-12 h-80 flex items-center justify-center overflow-hidden border border-electric-blue/20">
+                <div className="absolute inset-0 bg-electric-blue/5"></div>
+                <div className="relative z-10 text-center">
+                  <div className="mb-6">
+                    <BookOpen className="w-20 h-20 text-electric-blue mx-auto mb-4 animate-float" />
+                    <div className="flex justify-center space-x-3 mb-4">
+                      <Smartphone className="w-8 h-8 text-electric-blue/70" />
+                      <Zap className="w-8 h-8 text-electric-blue/70" />
+                      <TrendingUp className="w-8 h-8 text-electric-blue/70" />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="text-electric-blue font-semibold text-lg">Custom Feed</div>
+                    <div className="text-electric-blue/70 text-sm">Algorithm-free reading</div>
+                  </div>
                 </div>
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-electric-blue/10 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-cyan-400/10 rounded-full blur-xl"></div>
               </div>
             </div>
 
             {/* Publishers */}
             <div className="grid md:grid-cols-2 gap-16 items-center">
-              <div className="bg-neon-green/10 rounded-3xl p-12 h-64 flex items-center justify-center order-2 md:order-1">
-                <div className="text-center text-neon-green/60">
-                  [Publisher Dashboard]
+              <div className="relative bg-gradient-to-br from-neon-green/20 to-lime-400/20 rounded-3xl p-12 h-80 flex items-center justify-center overflow-hidden border border-neon-green/20 order-2 md:order-1">
+                <div className="absolute inset-0 bg-neon-green/5"></div>
+                <div className="relative z-10 text-center">
+                  <div className="mb-6">
+                    <DollarSign className="w-20 h-20 text-neon-green mx-auto mb-4 animate-float" />
+                    <div className="flex justify-center space-x-3 mb-4">
+                      <PieChart className="w-8 h-8 text-neon-green/70" />
+                      <Users className="w-8 h-8 text-neon-green/70" />
+                      <BarChart3 className="w-8 h-8 text-neon-green/70" />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="text-neon-green font-semibold text-lg">70% Revenue Share</div>
+                    <div className="text-neon-green/70 text-sm">Growing audience reach</div>
+                  </div>
                 </div>
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-neon-green/10 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-lime-400/10 rounded-full blur-xl"></div>
               </div>
               <div className="order-1 md:order-2">
                 <h3 className="text-4xl font-display font-bold text-neon-green mb-6">
@@ -278,10 +306,24 @@ const Index = () => {
                   </Button>
                 </Link>
               </div>
-              <div className="bg-vibrant-pink/10 rounded-3xl p-12 h-64 flex items-center justify-center">
-                <div className="text-center text-vibrant-pink/60">
-                  [Campus Integration]
+              <div className="relative bg-gradient-to-br from-vibrant-pink/20 to-pink-400/20 rounded-3xl p-12 h-80 flex items-center justify-center overflow-hidden border border-vibrant-pink/20">
+                <div className="absolute inset-0 bg-vibrant-pink/5"></div>
+                <div className="relative z-10 text-center">
+                  <div className="mb-6">
+                    <GraduationCap className="w-20 h-20 text-vibrant-pink mx-auto mb-4 animate-float" />
+                    <div className="flex justify-center space-x-3 mb-4">
+                      <Building2 className="w-8 h-8 text-vibrant-pink/70" />
+                      <Globe className="w-8 h-8 text-vibrant-pink/70" />
+                      <Shield className="w-8 h-8 text-vibrant-pink/70" />
+                    </div>
+                  </div>
+                  <div className="space-y-2">
+                    <div className="text-vibrant-pink font-semibold text-lg">Campus Integration</div>
+                    <div className="text-vibrant-pink/70 text-sm">Bulk student access</div>
+                  </div>
                 </div>
+                <div className="absolute -top-10 -right-10 w-40 h-40 bg-vibrant-pink/10 rounded-full blur-xl"></div>
+                <div className="absolute -bottom-10 -left-10 w-32 h-32 bg-pink-400/10 rounded-full blur-xl"></div>
               </div>
             </div>
           </div>
