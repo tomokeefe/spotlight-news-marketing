@@ -237,49 +237,31 @@ const Index = () => {
             </p>
           </div>
 
-          {/* Polished Card Grid */}
+          {/* Clean Card Grid */}
           <div className="grid lg:grid-cols-3 gap-8 mb-16">
             {/* Students Card */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-electric-blue/15 to-cyan-400/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-gray-800/50 backdrop-blur-xl border border-electric-blue/20 rounded-2xl p-8 h-[480px] flex flex-col hover:border-electric-blue/40 hover:bg-gray-800/70 transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-electric-blue/10">
+              <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 h-80 flex flex-col hover:border-electric-blue/30 hover:bg-gray-800/40 transition-all duration-300">
                 <div className="flex-1">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 bg-electric-blue/15 rounded-2xl flex items-center justify-center">
-                      <BookOpen className="w-7 h-7 text-electric-blue" />
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-electric-blue/20 rounded-xl flex items-center justify-center mr-4">
+                      <BookOpen className="w-6 h-6 text-electric-blue" />
                     </div>
-                    <div className="px-3 py-1.5 bg-electric-blue/15 border border-electric-blue/20 rounded-full">
-                      <span className="text-electric-blue text-xs font-semibold uppercase tracking-wide">Students</span>
-                    </div>
+                    <span className="text-electric-blue text-sm font-medium">For Students</span>
                   </div>
 
-                  <h3 className="text-2xl font-display font-bold text-electric-blue mb-4 leading-tight">
+                  <h3 className="text-2xl font-display font-bold text-white mb-4">
                     Custom News Feed
                   </h3>
 
-                  <p className="text-soft-gray/80 mb-6 text-sm leading-relaxed">
+                  <p className="text-soft-gray/70 mb-8 leading-relaxed">
                     Build your perfect scroll. Choose sources, topics, and writers.
                     No algorithms, no distractions, just the news you want.
                   </p>
-
-                  <div className="grid grid-cols-3 gap-3 mb-8">
-                    <div className="flex flex-col items-center p-4 bg-electric-blue/10 rounded-xl border border-electric-blue/10 hover:border-electric-blue/20 transition-colors">
-                      <Smartphone className="w-6 h-6 text-electric-blue mb-2" />
-                      <span className="text-xs text-electric-blue/80 font-medium">Mobile</span>
-                    </div>
-                    <div className="flex flex-col items-center p-4 bg-electric-blue/10 rounded-xl border border-electric-blue/10 hover:border-electric-blue/20 transition-colors">
-                      <Zap className="w-6 h-6 text-electric-blue mb-2" />
-                      <span className="text-xs text-electric-blue/80 font-medium">Fast</span>
-                    </div>
-                    <div className="flex flex-col items-center p-4 bg-electric-blue/10 rounded-xl border border-electric-blue/10 hover:border-electric-blue/20 transition-colors">
-                      <TrendingUp className="w-6 h-6 text-electric-blue mb-2" />
-                      <span className="text-xs text-electric-blue/80 font-medium">Smart</span>
-                    </div>
-                  </div>
                 </div>
 
                 <Link to="/students" className="w-full">
-                  <Button className="w-full bg-electric-blue text-midnight-black hover:bg-cyan-400 font-semibold text-sm py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-electric-blue/20 hover:shadow-electric-blue/30">
+                  <Button className="w-full bg-electric-blue text-black hover:bg-electric-blue/90 font-medium py-3 rounded-xl transition-colors">
                     Get Started
                   </Button>
                 </Link>
@@ -288,45 +270,27 @@ const Index = () => {
 
             {/* Publishers Card */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-neon-green/15 to-lime-400/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-gray-800/50 backdrop-blur-xl border border-neon-green/20 rounded-2xl p-8 h-[480px] flex flex-col hover:border-neon-green/40 hover:bg-gray-800/70 transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-neon-green/10">
+              <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 h-80 flex flex-col hover:border-neon-green/30 hover:bg-gray-800/40 transition-all duration-300">
                 <div className="flex-1">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 bg-neon-green/15 rounded-2xl flex items-center justify-center">
-                      <DollarSign className="w-7 h-7 text-neon-green" />
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-neon-green/20 rounded-xl flex items-center justify-center mr-4">
+                      <DollarSign className="w-6 h-6 text-neon-green" />
                     </div>
-                    <div className="px-3 py-1.5 bg-neon-green/15 border border-neon-green/20 rounded-full">
-                      <span className="text-neon-green text-xs font-semibold uppercase tracking-wide">Publishers</span>
-                    </div>
+                    <span className="text-neon-green text-sm font-medium">For Publishers</span>
                   </div>
 
-                  <h3 className="text-2xl font-display font-bold text-neon-green mb-4 leading-tight">
+                  <h3 className="text-2xl font-display font-bold text-white mb-4">
                     Revenue Growth
                   </h3>
 
-                  <p className="text-soft-gray/80 mb-6 text-sm leading-relaxed">
+                  <p className="text-soft-gray/70 mb-8 leading-relaxed">
                     70% revenue share with zero tech lift. Connect with engaged
                     readers and build sustainable income streams.
                   </p>
-
-                  <div className="grid grid-cols-3 gap-3 mb-8">
-                    <div className="flex flex-col items-center p-4 bg-neon-green/10 rounded-xl border border-neon-green/10 hover:border-neon-green/20 transition-colors">
-                      <PieChart className="w-6 h-6 text-neon-green mb-2" />
-                      <span className="text-xs text-neon-green/80 font-medium">Analytics</span>
-                    </div>
-                    <div className="flex flex-col items-center p-4 bg-neon-green/10 rounded-xl border border-neon-green/10 hover:border-neon-green/20 transition-colors">
-                      <Users className="w-6 h-6 text-neon-green mb-2" />
-                      <span className="text-xs text-neon-green/80 font-medium">Audience</span>
-                    </div>
-                    <div className="flex flex-col items-center p-4 bg-neon-green/10 rounded-xl border border-neon-green/10 hover:border-neon-green/20 transition-colors">
-                      <BarChart3 className="w-6 h-6 text-neon-green mb-2" />
-                      <span className="text-xs text-neon-green/80 font-medium">Growth</span>
-                    </div>
-                  </div>
                 </div>
 
                 <Link to="/publishers" className="w-full">
-                  <Button className="w-full bg-neon-green text-midnight-black hover:bg-lime-400 font-semibold text-sm py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-neon-green/20 hover:shadow-neon-green/30">
+                  <Button className="w-full bg-neon-green text-black hover:bg-neon-green/90 font-medium py-3 rounded-xl transition-colors">
                     Partner With Us
                   </Button>
                 </Link>
@@ -335,45 +299,27 @@ const Index = () => {
 
             {/* Universities Card */}
             <div className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-br from-vibrant-pink/15 to-pink-400/10 rounded-2xl blur-xl group-hover:blur-2xl transition-all duration-500"></div>
-              <div className="relative bg-gray-800/50 backdrop-blur-xl border border-vibrant-pink/20 rounded-2xl p-8 h-[480px] flex flex-col hover:border-vibrant-pink/40 hover:bg-gray-800/70 transition-all duration-500 group-hover:scale-[1.02] group-hover:shadow-2xl group-hover:shadow-vibrant-pink/10">
+              <div className="bg-gray-800/30 backdrop-blur-sm border border-gray-700/50 rounded-2xl p-8 h-80 flex flex-col hover:border-vibrant-pink/30 hover:bg-gray-800/40 transition-all duration-300">
                 <div className="flex-1">
-                  <div className="flex items-center justify-between mb-6">
-                    <div className="w-14 h-14 bg-vibrant-pink/15 rounded-2xl flex items-center justify-center">
-                      <GraduationCap className="w-7 h-7 text-vibrant-pink" />
+                  <div className="flex items-center mb-6">
+                    <div className="w-12 h-12 bg-vibrant-pink/20 rounded-xl flex items-center justify-center mr-4">
+                      <GraduationCap className="w-6 h-6 text-vibrant-pink" />
                     </div>
-                    <div className="px-3 py-1.5 bg-vibrant-pink/15 border border-vibrant-pink/20 rounded-full">
-                      <span className="text-vibrant-pink text-xs font-semibold uppercase tracking-wide">Universities</span>
-                    </div>
+                    <span className="text-vibrant-pink text-sm font-medium">For Universities</span>
                   </div>
 
-                  <h3 className="text-2xl font-display font-bold text-vibrant-pink mb-4 leading-tight">
+                  <h3 className="text-2xl font-display font-bold text-white mb-4">
                     Campus Integration
                   </h3>
 
-                  <p className="text-soft-gray/80 mb-6 text-sm leading-relaxed">
+                  <p className="text-soft-gray/70 mb-8 leading-relaxed">
                     Bulk subscriptions for thousands of students. Boost access,
                     engagement, and news literacy across your campus.
                   </p>
-
-                  <div className="grid grid-cols-3 gap-3 mb-8">
-                    <div className="flex flex-col items-center p-4 bg-vibrant-pink/10 rounded-xl border border-vibrant-pink/10 hover:border-vibrant-pink/20 transition-colors">
-                      <Building2 className="w-6 h-6 text-vibrant-pink mb-2" />
-                      <span className="text-xs text-vibrant-pink/80 font-medium">Campus</span>
-                    </div>
-                    <div className="flex flex-col items-center p-4 bg-vibrant-pink/10 rounded-xl border border-vibrant-pink/10 hover:border-vibrant-pink/20 transition-colors">
-                      <Globe className="w-6 h-6 text-vibrant-pink mb-2" />
-                      <span className="text-xs text-vibrant-pink/80 font-medium">Global</span>
-                    </div>
-                    <div className="flex flex-col items-center p-4 bg-vibrant-pink/10 rounded-xl border border-vibrant-pink/10 hover:border-vibrant-pink/20 transition-colors">
-                      <Shield className="w-6 h-6 text-vibrant-pink mb-2" />
-                      <span className="text-xs text-vibrant-pink/80 font-medium">Secure</span>
-                    </div>
-                  </div>
                 </div>
 
                 <Link to="/universities" className="w-full">
-                  <Button className="w-full bg-vibrant-pink text-midnight-black hover:bg-pink-400 font-semibold text-sm py-3 rounded-xl transition-all duration-300 hover:scale-105 shadow-lg shadow-vibrant-pink/20 hover:shadow-vibrant-pink/30">
+                  <Button className="w-full bg-vibrant-pink text-black hover:bg-vibrant-pink/90 font-medium py-3 rounded-xl transition-colors">
                     Contact Us
                   </Button>
                 </Link>
