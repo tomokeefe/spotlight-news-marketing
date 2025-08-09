@@ -39,7 +39,7 @@ const About = () => {
         {/* Overlay Tint */}
         <div className="absolute inset-0 bg-midnight-black/60 z-10"></div>
 
-        <div className="relative z-20 text-center max-w-5xl mx-auto">
+        <div className="relative z-20 text-center max-w-8xl mx-auto">
           {/* Product Badge */}
           <div className="mb-8">
             <span className="inline-block text-electric-blue text-lg font-medium tracking-wide">
@@ -64,7 +64,7 @@ const About = () => {
 
       {/* Mission Section */}
       <section className="py-24 bg-gray-900/30">
-        <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Our Mission */}
           <div className="grid md:grid-cols-2 gap-16 items-center mb-32">
             <div>
@@ -208,7 +208,7 @@ const About = () => {
 
       {/* Team Section */}
       <section className="py-24 bg-gray-900/50">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-4xl sm:text-5xl font-display font-bold text-soft-gray mb-8">
             Meet the <span className="text-electric-blue">team.</span>
           </h2>
@@ -240,7 +240,7 @@ const About = () => {
 
       {/* Final CTA */}
       <section className="py-24" style={{ backgroundColor: '#008888' }}>
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-5xl sm:text-6xl font-display font-bold text-white mb-8">
             Ready to be part of <br />
             <span className="text-electric-blue">the movement</span>?
