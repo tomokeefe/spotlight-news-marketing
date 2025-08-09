@@ -39,7 +39,7 @@ const Pricing = () => {
         {/* Overlay Tint */}
         <div className="absolute inset-0 bg-midnight-black/60 z-10"></div>
 
-        <div className="relative z-20 text-center max-w-5xl mx-auto">
+        <div className="relative z-20 text-center max-w-8xl mx-auto">
           {/* Product Badge */}
           <div className="mb-8">
             <span className="inline-block text-electric-blue text-lg font-medium tracking-wide">
