@@ -78,6 +78,7 @@ interface LeaderboardUser {
   challengesWon: number;
   currentStreak: number;
   points: number;
+  subscriptionType: 'Premium' | 'Student' | 'Non-Profit' | 'Professional';
   isCurrentUser?: boolean;
 }
 
