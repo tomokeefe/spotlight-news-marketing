@@ -1071,16 +1071,31 @@ const MyStats = () => {
                           }`}>
                             {user.avatar}
                           </div>
-                          <span className={`font-medium ${
-                            user.isCurrentUser ? 'text-electric-blue' : 'text-soft-gray'
-                          }`}>
-                            {user.name}
-                            {user.isCurrentUser && (
-                              <Badge className="ml-2 bg-electric-blue/20 text-electric-blue border-electric-blue/30 text-xs">
-                                You
-                              </Badge>
-                            )}
-                          </span>
+                          <div>
+                            <div className="flex items-center gap-2">
+                              <span className={`font-medium ${
+                                user.isCurrentUser ? 'text-electric-blue' : 'text-soft-gray'
+                              }`}>
+                                {user.name}
+                              </span>
+                              {user.isCurrentUser && (
+                                <Badge className="bg-electric-blue/20 text-electric-blue border-electric-blue/30 text-xs">
+                                  You
+                                </Badge>
+                              )}
+                            </div>
+                            <div className={`text-xs px-2 py-0.5 rounded-full mt-1 inline-flex items-center gap-1 ${
+                              user.subscriptionType === 'Premium' ? 'bg-yellow-500/20 text-yellow-400' :
+                              user.subscriptionType === 'Student' ? 'bg-electric-blue/20 text-electric-blue' :
+                              user.subscriptionType === 'Non-Profit' ? 'bg-neon-green/20 text-neon-green' :
+                              'bg-vibrant-pink/20 text-vibrant-pink'
+                            }`}>
+                              {user.subscriptionType === 'Premium' ? '👑' :
+                               user.subscriptionType === 'Student' ? '🎓' :
+                               user.subscriptionType === 'Non-Profit' ? '💚' : '💼'}
+                              <span>{user.subscriptionType}</span>
+                            </div>
+                          </div>
                         </div>
                       </td>
                       <td className="px-6 py-4 font-medium text-soft-gray">{user.articlesRead}</td>
