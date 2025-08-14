@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Link, useLocation } from "react-router-dom";
-import { Menu, X, User, LogOut, Settings } from "lucide-react";
+import { Menu, X, User, LogOut, Settings, BarChart3 } from "lucide-react";
 import { useAuth } from "@/lib/auth";
 import {
   DropdownMenu,
@@ -49,6 +49,11 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
     { path: "/about", label: "About" },
   ];
 
+  // Additional navigation links for authenticated users
+  const authenticatedLinks = [
+    { path: "/my-stats", label: "My Stats & Leaderboards" },
+  ];
+
   return (
     <nav className="bg-midnight-black/95 backdrop-blur-sm sticky top-0 z-50 border-b border-soft-gray/10">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -74,6 +79,15 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
                 {link.label}
               </Link>
             ))}
+            {isAuthenticated && authenticatedLinks.map((link) => (
+              <Link
+                key={link.path}
+                to={link.path}
+                className={getLinkClasses(link.path)}
+              >
+                {link.label}
+              </Link>
+            ))}
           </div>
 
           {/* Desktop CTA */}
@@ -91,6 +105,12 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
                     <Link to="/dashboard" className="flex items-center cursor-pointer">
                       <User className="w-4 h-4 mr-2" />
                       Dashboard
+                    </Link>
+                  </DropdownMenuItem>
+                  <DropdownMenuItem asChild>
+                    <Link to="/my-stats" className="flex items-center cursor-pointer">
+                      <BarChart3 className="w-4 h-4 mr-2" />
+                      My Stats
                     </Link>
                   </DropdownMenuItem>
                   <DropdownMenuItem asChild>
@@ -172,6 +192,16 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
                     {link.label}
                   </Link>
                 ))}
+                {isAuthenticated && authenticatedLinks.map((link) => (
+                  <Link
+                    key={link.path}
+                    to={link.path}
+                    className="text-soft-gray/80 hover:text-soft-gray transition-colors text-lg font-medium py-2"
+                    onClick={closeMenu}
+                  >
+                    {link.label}
+                  </Link>
+                ))}
 
                 {/* Mobile CTA */}
                 <div className="pt-6 border-t border-soft-gray/10">
@@ -183,8 +213,14 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
                         </p>
                       </div>
                       <Link to="/dashboard" onClick={closeMenu} className="block">
-                        <Button className="w-full bg-electric-blue text-midnight-black hover:bg-cyan-400 font-medium text-lg py-4 rounded-full">
+                        <Button className="w-full bg-electric-blue text-midnight-black hover:bg-cyan-400 font-medium text-lg py-4 rounded-full mb-2">
                           Dashboard
+                        </Button>
+                      </Link>
+                      <Link to="/my-stats" onClick={closeMenu} className="block">
+                        <Button variant="outline" className="w-full border-electric-blue text-electric-blue hover:bg-electric-blue/10 font-medium text-lg py-4 rounded-full">
+                          <BarChart3 className="w-4 h-4 mr-2" />
+                          My Stats
                         </Button>
                       </Link>
                       <Button
