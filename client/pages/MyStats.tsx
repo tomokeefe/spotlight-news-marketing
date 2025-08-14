@@ -106,6 +106,7 @@ const MyStats = () => {
   const { user, isAuthenticated } = useAuth();
   const [selectedPeriod, setSelectedPeriod] = useState<'week' | 'month' | 'all'>('week');
   const [leaderboardFilter, setLeaderboardFilter] = useState<'all' | 'campus'>('all');
+  const [subscriptionFilter, setSubscriptionFilter] = useState<'all' | 'Premium' | 'Student' | 'Non-Profit' | 'Professional'>('all');
   const [sortBy, setSortBy] = useState<'articles' | 'challenges' | 'streak'>('articles');
   const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
   const [showDetailedStats, setShowDetailedStats] = useState(false);
