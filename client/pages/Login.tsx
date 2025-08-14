@@ -97,7 +97,7 @@ const Login = () => {
         navigate("/onboarding");
       } else {
         await login(formData.email, formData.password);
-        navigate("/dashboard");
+        navigate("/my-stats");
       }
     } catch (error) {
       setErrors({ submit: "Something went wrong. Please try again." });
