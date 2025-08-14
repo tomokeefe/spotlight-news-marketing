@@ -99,12 +99,6 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="bg-gray-800 border-gray-700 text-soft-gray">
                   <DropdownMenuItem asChild>
-                    <Link to="/dashboard" className="flex items-center cursor-pointer">
-                      <User className="w-4 h-4 mr-2" />
-                      Dashboard
-                    </Link>
-                  </DropdownMenuItem>
-                  <DropdownMenuItem asChild>
                     <Link to="/my-stats" className="flex items-center cursor-pointer">
                       <BarChart3 className="w-4 h-4 mr-2" />
                       My Stats
@@ -199,9 +193,9 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
                           Welcome, {user?.firstName}!
                         </p>
                       </div>
-                      <Link to="/dashboard" onClick={closeMenu} className="block">
+                      <Link to="/my-stats" onClick={closeMenu} className="block">
                         <Button className="w-full bg-electric-blue text-midnight-black hover:bg-cyan-400 font-medium text-lg py-4 rounded-full">
-                          Dashboard
+                          My Stats
                         </Button>
                       </Link>
                       <Button
