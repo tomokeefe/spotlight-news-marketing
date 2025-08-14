@@ -27,7 +27,11 @@ import {
   Activity,
   Calendar,
   ChevronLeft,
-  ChevronRight
+  ChevronRight,
+  Crown,
+  GraduationCap,
+  Building,
+  Briefcase
 } from "lucide-react";
 
 // Mock data structures that match real API responses
