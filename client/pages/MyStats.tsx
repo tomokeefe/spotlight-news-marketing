@@ -503,16 +503,18 @@ const MyStats = () => {
             </Card>
           </div>
 
-          {/* View Full Stats CTA */}
-          <div className="text-center">
-            <Button
-              onClick={() => setShowDetailedStats(!showDetailedStats)}
-              className="bg-electric-blue text-midnight-black hover:bg-cyan-400 font-semibold px-8 py-4 rounded-full"
-            >
-              <BarChart3 className="w-5 h-5 mr-2" />
-              {showDetailedStats ? 'Hide Detailed Stats' : 'View Full Stats'}
-            </Button>
-          </div>
+          {/* View Full Stats CTA - Show when collapsed */}
+          {!showDetailedStats && (
+            <div className="text-center">
+              <Button
+                onClick={() => setShowDetailedStats(true)}
+                className="bg-electric-blue text-midnight-black hover:bg-cyan-400 font-semibold px-8 py-4 rounded-full"
+              >
+                <BarChart3 className="w-5 h-5 mr-2" />
+                View Full Stats
+              </Button>
+            </div>
+          )}
 
           {/* Detailed Stats Panel */}
           {showDetailedStats && (
