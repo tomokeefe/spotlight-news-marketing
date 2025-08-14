@@ -40,8 +40,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
     return `${baseClasses} text-soft-gray/70 hover:text-soft-gray`;
   };
 
-  // Simplified navigation - Apple style
-  const navigationLinks = [
+  // Navigation links for non-authenticated users (marketing pages)
+  const publicNavigationLinks = [
     { path: "/students", label: "Students" },
     { path: "/publishers", label: "Publishers" },
     { path: "/universities", label: "Universities" },
@@ -49,10 +49,16 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
     { path: "/about", label: "About" },
   ];
 
-  // Additional navigation links for authenticated users
-  const authenticatedLinks = [
-    { path: "/my-stats", label: "My Stats & Leaderboards" },
+  // Navigation links for authenticated users (app pages)
+  const authenticatedNavigationLinks = [
+    { path: "/my-news", label: "My News" },
+    { path: "/explore", label: "Explore" },
+    { path: "/my-library", label: "My Library" },
+    { path: "/my-stats", label: "My Stats" },
   ];
+
+  // Choose which navigation links to show
+  const navigationLinks = isAuthenticated ? authenticatedNavigationLinks : publicNavigationLinks;
 
   return (
     <nav className="bg-midnight-black/95 backdrop-blur-sm sticky top-0 z-50 border-b border-soft-gray/10">
@@ -71,15 +77,6 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             {navigationLinks.map((link) => (
-              <Link
-                key={link.path}
-                to={link.path}
-                className={getLinkClasses(link.path)}
-              >
-                {link.label}
-              </Link>
-            ))}
-            {isAuthenticated && authenticatedLinks.map((link) => (
               <Link
                 key={link.path}
                 to={link.path}
@@ -192,16 +189,6 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
                     {link.label}
                   </Link>
                 ))}
-                {isAuthenticated && authenticatedLinks.map((link) => (
-                  <Link
-                    key={link.path}
-                    to={link.path}
-                    className="text-soft-gray/80 hover:text-soft-gray transition-colors text-lg font-medium py-2"
-                    onClick={closeMenu}
-                  >
-                    {link.label}
-                  </Link>
-                ))}
 
                 {/* Mobile CTA */}
                 <div className="pt-6 border-t border-soft-gray/10">
@@ -213,14 +200,8 @@ const Navigation: React.FC<NavigationProps> = ({ currentPage }) => {
                         </p>
                       </div>
                       <Link to="/dashboard" onClick={closeMenu} className="block">
-                        <Button className="w-full bg-electric-blue text-midnight-black hover:bg-cyan-400 font-medium text-lg py-4 rounded-full mb-2">
+                        <Button className="w-full bg-electric-blue text-midnight-black hover:bg-cyan-400 font-medium text-lg py-4 rounded-full">
                           Dashboard
-                        </Button>
-                      </Link>
-                      <Link to="/my-stats" onClick={closeMenu} className="block">
-                        <Button variant="outline" className="w-full border-electric-blue text-electric-blue hover:bg-electric-blue/10 font-medium text-lg py-4 rounded-full">
-                          <BarChart3 className="w-4 h-4 mr-2" />
-                          My Stats
                         </Button>
                       </Link>
                       <Button
