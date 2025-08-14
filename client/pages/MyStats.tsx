@@ -31,6 +31,20 @@ import {
 } from "lucide-react";
 
 // Mock data structures that match real API responses
+interface Badge {
+  id: string;
+  name: string;
+  description: string;
+  icon: string;
+  category: 'reading' | 'streak' | 'challenges' | 'social' | 'special';
+  requirement: string;
+  progress?: number;
+  maxProgress?: number;
+  earned: boolean;
+  earnedDate?: string;
+  rarity: 'common' | 'rare' | 'epic' | 'legendary';
+}
+
 interface ReadingStats {
   articlesRead: {
     total: number;
@@ -93,6 +107,8 @@ const MyStats = () => {
   const [leaderboardFilter, setLeaderboardFilter] = useState<'all' | 'campus'>('all');
   const [sortBy, setSortBy] = useState<'articles' | 'challenges' | 'streak'>('articles');
   const [currentChallengeIndex, setCurrentChallengeIndex] = useState(0);
+  const [showDetailedStats, setShowDetailedStats] = useState(false);
+  const [badgesTab, setBadgesTab] = useState<'earned' | 'available'>('earned');
 
   // Mock data - in real app, this would come from API
   const [stats, setStats] = useState<ReadingStats>({
@@ -134,6 +150,115 @@ const MyStats = () => {
     { rank: 6, id: "6", name: "Chris Johnson", avatar: "CJ", articlesRead: 289, challengesWon: 2, currentStreak: 18, points: 1920 },
     { rank: 7, id: "7", name: "Taylor Wong", avatar: "TW", articlesRead: 267, challengesWon: 5, currentStreak: 12, points: 1840 },
     { rank: 8, id: "8", name: "Jamie Lee", avatar: "JL", articlesRead: 245, challengesWon: 3, currentStreak: 8, points: 1720 }
+  ]);
+
+  const [badges, setBadges] = useState<Badge[]>([
+    // Earned badges
+    {
+      id: "first-article",
+      name: "First Read",
+      description: "Read your first article on Spotlight",
+      icon: "📖",
+      category: "reading",
+      requirement: "Read 1 article",
+      earned: true,
+      earnedDate: "2024-01-01",
+      rarity: "common"
+    },
+    {
+      id: "week-warrior",
+      name: "Week Warrior",
+      description: "Read articles for 7 consecutive days",
+      icon: "🔥",
+      category: "streak",
+      requirement: "7-day reading streak",
+      earned: true,
+      earnedDate: "2024-01-08",
+      rarity: "rare"
+    },
+    {
+      id: "campus-expert",
+      name: "Campus Expert",
+      description: "Read 50 campus news articles",
+      icon: "🎓",
+      category: "reading",
+      requirement: "Read 50 campus articles",
+      earned: true,
+      earnedDate: "2024-01-15",
+      rarity: "epic"
+    },
+    {
+      id: "challenger",
+      name: "Challenge Accepted",
+      description: "Complete your first reading challenge",
+      icon: "🏆",
+      category: "challenges",
+      requirement: "Complete 1 challenge",
+      earned: true,
+      earnedDate: "2024-01-20",
+      rarity: "rare"
+    },
+    // Available badges (not earned)
+    {
+      id: "century-club",
+      name: "Century Club",
+      description: "Read 100 articles in total",
+      icon: "💯",
+      category: "reading",
+      requirement: "Read 100 articles",
+      progress: 85,
+      maxProgress: 100,
+      earned: false,
+      rarity: "epic"
+    },
+    {
+      id: "month-master",
+      name: "Month Master",
+      description: "Read articles for 30 consecutive days",
+      icon: "📅",
+      category: "streak",
+      requirement: "30-day reading streak",
+      progress: 15,
+      maxProgress: 30,
+      earned: false,
+      rarity: "legendary"
+    },
+    {
+      id: "speedreader",
+      name: "Speed Reader",
+      description: "Read 10 articles in a single day",
+      icon: "⚡",
+      category: "reading",
+      requirement: "Read 10 articles in 1 day",
+      progress: 0,
+      maxProgress: 10,
+      earned: false,
+      rarity: "rare"
+    },
+    {
+      id: "social-butterfly",
+      name: "Social Butterfly",
+      description: "Like 50 challenges",
+      icon: "🦋",
+      category: "social",
+      requirement: "Like 50 challenges",
+      progress: 23,
+      maxProgress: 50,
+      earned: false,
+      rarity: "rare"
+    },
+    {
+      id: "triple-crown",
+      name: "Triple Crown",
+      description: "Win challenges in 3 different categories",
+      icon: "👑",
+      category: "challenges",
+      requirement: "Win 3 different challenge types",
+      progress: 1,
+      maxProgress: 3,
+      earned: false,
+      rarity: "legendary"
+    }
   ]);
 
   const [challenges, setChallenges] = useState<Challenge[]>([
@@ -380,10 +505,337 @@ const MyStats = () => {
 
           {/* View Full Stats CTA */}
           <div className="text-center">
-            <Button className="bg-electric-blue text-midnight-black hover:bg-cyan-400 font-semibold px-8 py-4 rounded-full">
+            <Button
+              onClick={() => setShowDetailedStats(!showDetailedStats)}
+              className="bg-electric-blue text-midnight-black hover:bg-cyan-400 font-semibold px-8 py-4 rounded-full"
+            >
               <BarChart3 className="w-5 h-5 mr-2" />
-              View Full Stats
+              {showDetailedStats ? 'Hide Detailed Stats' : 'View Full Stats'}
             </Button>
+          </div>
+
+          {/* Detailed Stats Panel */}
+          {showDetailedStats && (
+            <div className="mt-16 space-y-8">
+              {/* Reading Trends Chart */}
+              <Card className="bg-gray-800/30 border-electric-blue/30 p-8">
+                <h3 className="text-2xl font-display font-bold text-electric-blue mb-6">
+                  Reading Trends
+                </h3>
+                <div className="grid md:grid-cols-2 gap-8">
+                  <div>
+                    <h4 className="text-lg font-semibold text-soft-gray mb-4">Weekly Progress</h4>
+                    <div className="space-y-3">
+                      {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day, index) => (
+                        <div key={day} className="flex items-center justify-between">
+                          <span className="text-soft-gray/70 w-8">{day}</span>
+                          <div className="flex-1 mx-4 bg-gray-700/50 rounded-full h-2">
+                            <div
+                              className="bg-electric-blue rounded-full h-2 transition-all duration-500"
+                              style={{ width: `${stats.articlesRead.weeklyData[index] * 10}%` }}
+                            />
+                          </div>
+                          <span className="text-electric-blue font-medium w-8 text-right">
+                            {stats.articlesRead.weeklyData[index]}
+                          </span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                  <div>
+                    <h4 className="text-lg font-semibold text-soft-gray mb-4">Topic Distribution</h4>
+                    <div className="space-y-3">
+                      {stats.topicsExplored.breakdown.map((topic, index) => (
+                        <div key={topic.topic} className="flex items-center justify-between">
+                          <span className="text-soft-gray/70 text-sm">{topic.topic}</span>
+                          <div className="flex items-center space-x-3">
+                            <div className="flex-1 mx-4 bg-gray-700/50 rounded-full h-2 w-24">
+                              <div
+                                className={`rounded-full h-2 transition-all duration-500 ${
+                                  index === 0 ? 'bg-electric-blue' :
+                                  index === 1 ? 'bg-neon-green' :
+                                  index === 2 ? 'bg-vibrant-pink' :
+                                  index === 3 ? 'bg-orange-500' : 'bg-purple-500'
+                                }`}
+                                style={{ width: `${topic.percentage}%` }}
+                              />
+                            </div>
+                            <span className={`font-medium text-sm ${
+                              index === 0 ? 'text-electric-blue' :
+                              index === 1 ? 'text-neon-green' :
+                              index === 2 ? 'text-vibrant-pink' :
+                              index === 3 ? 'text-orange-500' : 'text-purple-500'
+                            }`}>
+                              {topic.percentage}%
+                            </span>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                </div>
+              </Card>
+
+              {/* Reading Goals */}
+              <Card className="bg-gray-800/30 border-electric-blue/30 p-8">
+                <h3 className="text-2xl font-display font-bold text-electric-blue mb-6">
+                  Monthly Goals
+                </h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="text-center">
+                    <div className="relative w-24 h-24 mx-auto mb-4">
+                      <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 36 36">
+                        <path
+                          className="text-gray-700"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          fill="none"
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path
+                          className="text-electric-blue"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          fill="none"
+                          strokeDasharray="84, 100"
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                      </svg>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-lg font-bold text-electric-blue">84%</span>
+                      </div>
+                    </div>
+                    <h4 className="font-semibold text-soft-gray mb-1">Articles Goal</h4>
+                    <p className="text-sm text-soft-gray/70">105/125 articles</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="relative w-24 h-24 mx-auto mb-4">
+                      <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 36 36">
+                        <path
+                          className="text-gray-700"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          fill="none"
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path
+                          className="text-neon-green"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          fill="none"
+                          strokeDasharray="62, 100"
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                      </svg>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-lg font-bold text-neon-green">62%</span>
+                      </div>
+                    </div>
+                    <h4 className="font-semibold text-soft-gray mb-1">Time Goal</h4>
+                    <p className="text-sm text-soft-gray/70">21h/34h reading</p>
+                  </div>
+                  <div className="text-center">
+                    <div className="relative w-24 h-24 mx-auto mb-4">
+                      <svg className="w-24 h-24 transform -rotate-90" viewBox="0 0 36 36">
+                        <path
+                          className="text-gray-700"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          fill="none"
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                        <path
+                          className="text-vibrant-pink"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          fill="none"
+                          strokeDasharray="50, 100"
+                          d="M18 2.0845 a 15.9155 15.9155 0 0 1 0 31.831 a 15.9155 15.9155 0 0 1 0 -31.831"
+                        />
+                      </svg>
+                      <div className="absolute inset-0 flex items-center justify-center">
+                        <span className="text-lg font-bold text-vibrant-pink">50%</span>
+                      </div>
+                    </div>
+                    <h4 className="font-semibold text-soft-gray mb-1">Streak Goal</h4>
+                    <p className="text-sm text-soft-gray/70">15/30 days</p>
+                  </div>
+                </div>
+              </Card>
+            </div>
+          )}
+        </div>
+      </section>
+
+      {/* Badges & Achievements */}
+      <section className="py-24 bg-gray-900/40">
+        <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12">
+            <h2 className="text-4xl sm:text-5xl font-display font-bold text-soft-gray mb-6">
+              Badges & <span className="text-electric-blue">Achievements</span>
+            </h2>
+            <p className="text-xl text-soft-gray/70">
+              Celebrate your reading milestones
+            </p>
+          </div>
+
+          {/* Badge Tabs */}
+          <div className="flex justify-center mb-8">
+            <div className="bg-gray-800/50 rounded-full p-1 flex">
+              <Button
+                variant={badgesTab === 'earned' ? 'default' : 'ghost'}
+                onClick={() => setBadgesTab('earned')}
+                className={`rounded-full px-6 py-2 transition-all ${
+                  badgesTab === 'earned'
+                    ? 'bg-electric-blue text-midnight-black'
+                    : 'text-soft-gray hover:text-electric-blue'
+                }`}
+              >
+                <Award className="w-4 h-4 mr-2" />
+                Earned ({badges.filter(b => b.earned).length})
+              </Button>
+              <Button
+                variant={badgesTab === 'available' ? 'default' : 'ghost'}
+                onClick={() => setBadgesTab('available')}
+                className={`rounded-full px-6 py-2 transition-all ${
+                  badgesTab === 'available'
+                    ? 'bg-electric-blue text-midnight-black'
+                    : 'text-soft-gray hover:text-electric-blue'
+                }`}
+              >
+                <Target className="w-4 h-4 mr-2" />
+                Available ({badges.filter(b => !b.earned).length})
+              </Button>
+            </div>
+          </div>
+
+          {/* Badges Grid */}
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            {badges
+              .filter(badge => badgesTab === 'earned' ? badge.earned : !badge.earned)
+              .map((badge) => (
+                <Card
+                  key={badge.id}
+                  className={`p-6 transition-all duration-300 hover:scale-105 ${
+                    badge.earned
+                      ? 'bg-gray-800/40 border-electric-blue/40 shadow-lg shadow-electric-blue/10'
+                      : 'bg-gray-800/20 border-gray-700/50 hover:border-electric-blue/30'
+                  }`}
+                >
+                  <div className="text-center">
+                    {/* Badge Icon with rarity glow */}
+                    <div className={`relative w-16 h-16 mx-auto mb-4 rounded-full flex items-center justify-center text-3xl ${
+                      badge.earned
+                        ? badge.rarity === 'legendary' ? 'bg-gradient-to-br from-purple-500/20 to-pink-500/20 ring-2 ring-purple-500/50' :
+                          badge.rarity === 'epic' ? 'bg-gradient-to-br from-orange-500/20 to-red-500/20 ring-2 ring-orange-500/50' :
+                          badge.rarity === 'rare' ? 'bg-gradient-to-br from-blue-500/20 to-cyan-500/20 ring-2 ring-blue-500/50' :
+                          'bg-gradient-to-br from-gray-500/20 to-gray-400/20 ring-2 ring-gray-500/50'
+                        : 'bg-gray-700/50'
+                    }`}>
+                      <span className={badge.earned ? '' : 'grayscale opacity-50'}>
+                        {badge.icon}
+                      </span>
+                      {badge.earned && (
+                        <div className="absolute -top-1 -right-1 w-6 h-6 bg-electric-blue rounded-full flex items-center justify-center">
+                          <span className="text-xs">✓</span>
+                        </div>
+                      )}
+                    </div>
+
+                    {/* Badge Name */}
+                    <h3 className={`text-lg font-bold mb-2 ${
+                      badge.earned ? 'text-soft-gray' : 'text-soft-gray/60'
+                    }`}>
+                      {badge.name}
+                    </h3>
+
+                    {/* Badge Description */}
+                    <p className={`text-sm mb-3 ${
+                      badge.earned ? 'text-soft-gray/70' : 'text-soft-gray/50'
+                    }`}>
+                      {badge.description}
+                    </p>
+
+                    {/* Requirement */}
+                    <div className={`text-xs rounded-full px-3 py-1 mb-3 inline-block ${
+                      badge.earned
+                        ? 'bg-electric-blue/20 text-electric-blue border border-electric-blue/30'
+                        : 'bg-gray-700/50 text-soft-gray/60 border border-gray-600/50'
+                    }`}>
+                      {badge.requirement}
+                    </div>
+
+                    {/* Progress Bar for Available Badges */}
+                    {!badge.earned && badge.progress !== undefined && badge.maxProgress && (
+                      <div className="mt-3">
+                        <div className="flex items-center justify-between text-xs text-soft-gray/60 mb-1">
+                          <span>Progress</span>
+                          <span>{badge.progress}/{badge.maxProgress}</span>
+                        </div>
+                        <div className="w-full bg-gray-700/50 rounded-full h-2">
+                          <div
+                            className="bg-electric-blue rounded-full h-2 transition-all duration-500"
+                            style={{ width: `${(badge.progress / badge.maxProgress) * 100}%` }}
+                          />
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Earned Date */}
+                    {badge.earned && badge.earnedDate && (
+                      <p className="text-xs text-soft-gray/50 mt-2">
+                        Earned {new Date(badge.earnedDate).toLocaleDateString()}
+                      </p>
+                    )}
+
+                    {/* Rarity Indicator */}
+                    <div className={`text-xs font-medium mt-2 ${
+                      badge.rarity === 'legendary' ? 'text-purple-400' :
+                      badge.rarity === 'epic' ? 'text-orange-400' :
+                      badge.rarity === 'rare' ? 'text-blue-400' :
+                      'text-gray-400'
+                    }`}>
+                      {badge.rarity.charAt(0).toUpperCase() + badge.rarity.slice(1)}
+                    </div>
+                  </div>
+                </Card>
+              ))
+            }
+          </div>
+
+          {/* Badge Stats Summary */}
+          <div className="mt-12 text-center">
+            <Card className="bg-gray-800/30 border-electric-blue/30 p-8 max-w-2xl mx-auto">
+              <h3 className="text-xl font-display font-bold text-electric-blue mb-6">
+                Badge Collection Summary
+              </h3>
+              <div className="grid grid-cols-2 md:grid-cols-4 gap-6">
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-soft-gray mb-1">
+                    {badges.filter(b => b.earned).length}
+                  </div>
+                  <div className="text-sm text-soft-gray/70">Earned</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-soft-gray mb-1">
+                    {badges.filter(b => !b.earned).length}
+                  </div>
+                  <div className="text-sm text-soft-gray/70">Available</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-electric-blue mb-1">
+                    {Math.round((badges.filter(b => b.earned).length / badges.length) * 100)}%
+                  </div>
+                  <div className="text-sm text-soft-gray/70">Complete</div>
+                </div>
+                <div className="text-center">
+                  <div className="text-2xl font-bold text-vibrant-pink mb-1">
+                    {badges.filter(b => b.earned && b.rarity !== 'common').length}
+                  </div>
+                  <div className="text-sm text-soft-gray/70">Rare+</div>
+                </div>
+              </div>
+            </Card>
           </div>
         </div>
       </section>
