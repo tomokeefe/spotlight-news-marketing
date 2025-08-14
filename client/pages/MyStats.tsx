@@ -548,16 +548,16 @@ const MyStats = () => {
                     <h4 className="text-lg font-semibold text-soft-gray mb-4">Topic Distribution</h4>
                     <div className="space-y-3">
                       {stats.topicsExplored.breakdown.map((topic, index) => (
-                        <div key={topic.topic} className="flex items-center justify-between">
+                        <div key={topic.topic} className="flex items-center justify-between hover:bg-gray-700/20 rounded-lg p-2 cursor-pointer transition-colors">
                           <span className="text-soft-gray/70 text-sm">{topic.topic}</span>
                           <div className="flex items-center space-x-3">
-                            <div className="flex-1 mx-4 bg-gray-700/50 rounded-full h-2 w-24">
+                            <div className="flex-1 mx-4 bg-gray-700/50 rounded-full h-3 w-24 hover:h-4 transition-all duration-300">
                               <div
-                                className={`rounded-full h-2 transition-all duration-500 ${
-                                  index === 0 ? 'bg-electric-blue' :
-                                  index === 1 ? 'bg-neon-green' :
-                                  index === 2 ? 'bg-vibrant-pink' :
-                                  index === 3 ? 'bg-orange-500' : 'bg-purple-500'
+                                className={`rounded-full h-full transition-all duration-500 ${
+                                  index === 0 ? 'bg-electric-blue hover:bg-cyan-400' :
+                                  index === 1 ? 'bg-neon-green hover:bg-lime-400' :
+                                  index === 2 ? 'bg-vibrant-pink hover:bg-pink-400' :
+                                  index === 3 ? 'bg-orange-500 hover:bg-orange-400' : 'bg-purple-500 hover:bg-purple-400'
                                 }`}
                                 style={{ width: `${topic.percentage}%` }}
                               />
