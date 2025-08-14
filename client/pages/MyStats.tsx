@@ -664,6 +664,17 @@ const MyStats = () => {
                   </div>
                 </div>
               </Card>
+
+              {/* Hide Detailed Stats CTA - After Monthly Goals */}
+              <div className="text-center">
+                <Button
+                  onClick={() => setShowDetailedStats(false)}
+                  className="bg-gray-700 text-soft-gray hover:bg-gray-600 font-semibold px-8 py-4 rounded-full"
+                >
+                  <BarChart3 className="w-5 h-5 mr-2" />
+                  Hide Detailed Stats
+                </Button>
+              </div>
             </div>
           )}
         </div>
