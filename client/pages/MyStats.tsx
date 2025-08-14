@@ -1038,7 +1038,7 @@ const MyStats = () => {
                   </tr>
                 </thead>
                 <tbody>
-                  {leaderboard.map((user) => (
+                  {filteredLeaderboard.slice(0, 8).map((user) => (
                     <tr 
                       key={user.id} 
                       className={`border-t border-gray-700/50 hover:bg-gray-800/30 transition-colors ${
