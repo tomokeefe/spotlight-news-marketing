@@ -894,30 +894,99 @@ const MyStats = () => {
           </div>
 
           {/* Filters */}
-          <div className="flex flex-col sm:flex-row gap-4 mb-8">
-            <div className="flex gap-2">
-              <Button
-                variant={leaderboardFilter === 'all' ? 'default' : 'outline'}
-                onClick={() => setLeaderboardFilter('all')}
-                className={leaderboardFilter === 'all' 
-                  ? 'bg-electric-blue text-midnight-black' 
-                  : 'border-electric-blue text-electric-blue hover:bg-electric-blue/10'
-                }
-              >
-                All Readers
-              </Button>
-              <Button
-                variant={leaderboardFilter === 'campus' ? 'default' : 'outline'}
-                onClick={() => setLeaderboardFilter('campus')}
-                className={leaderboardFilter === 'campus' 
-                  ? 'bg-electric-blue text-midnight-black' 
-                  : 'border-electric-blue text-electric-blue hover:bg-electric-blue/10'
-                }
-              >
-                Campus Only
-              </Button>
+          <div className="space-y-4 mb-6">
+            {/* Top Row: Region and Subscription Filters */}
+            <div className="flex flex-col sm:flex-row gap-4">
+              <div className="flex gap-2">
+                <Button
+                  variant={leaderboardFilter === 'all' ? 'default' : 'outline'}
+                  onClick={() => setLeaderboardFilter('all')}
+                  className={leaderboardFilter === 'all'
+                    ? 'bg-electric-blue text-midnight-black'
+                    : 'border-electric-blue text-electric-blue hover:bg-electric-blue/10'
+                  }
+                >
+                  All Readers
+                </Button>
+                <Button
+                  variant={leaderboardFilter === 'campus' ? 'default' : 'outline'}
+                  onClick={() => setLeaderboardFilter('campus')}
+                  className={leaderboardFilter === 'campus'
+                    ? 'bg-electric-blue text-midnight-black'
+                    : 'border-electric-blue text-electric-blue hover:bg-electric-blue/10'
+                  }
+                >
+                  Campus Only
+                </Button>
+              </div>
+
+              {/* Subscription Type Filter */}
+              <div className="flex gap-2 flex-wrap">
+                <Button
+                  variant={subscriptionFilter === 'all' ? 'default' : 'outline'}
+                  onClick={() => setSubscriptionFilter('all')}
+                  size="sm"
+                  className={subscriptionFilter === 'all'
+                    ? 'bg-electric-blue text-midnight-black'
+                    : 'border-gray-600 text-soft-gray hover:bg-gray-700'
+                  }
+                >
+                  <Users className="w-3 h-3 mr-1" />
+                  All Types
+                </Button>
+                <Button
+                  variant={subscriptionFilter === 'Premium' ? 'default' : 'outline'}
+                  onClick={() => setSubscriptionFilter('Premium')}
+                  size="sm"
+                  className={subscriptionFilter === 'Premium'
+                    ? 'bg-yellow-500 text-midnight-black'
+                    : 'border-yellow-500/50 text-yellow-400 hover:bg-yellow-500/10'
+                  }
+                >
+                  <Crown className="w-3 h-3 mr-1" />
+                  Premium
+                </Button>
+                <Button
+                  variant={subscriptionFilter === 'Student' ? 'default' : 'outline'}
+                  onClick={() => setSubscriptionFilter('Student')}
+                  size="sm"
+                  className={subscriptionFilter === 'Student'
+                    ? 'bg-electric-blue text-midnight-black'
+                    : 'border-electric-blue/50 text-electric-blue hover:bg-electric-blue/10'
+                  }
+                >
+                  <GraduationCap className="w-3 h-3 mr-1" />
+                  Student
+                </Button>
+                <Button
+                  variant={subscriptionFilter === 'Non-Profit' ? 'default' : 'outline'}
+                  onClick={() => setSubscriptionFilter('Non-Profit')}
+                  size="sm"
+                  className={subscriptionFilter === 'Non-Profit'
+                    ? 'bg-neon-green text-midnight-black'
+                    : 'border-neon-green/50 text-neon-green hover:bg-neon-green/10'
+                  }
+                >
+                  <Heart className="w-3 h-3 mr-1" />
+                  Non-Profit
+                </Button>
+                <Button
+                  variant={subscriptionFilter === 'Professional' ? 'default' : 'outline'}
+                  onClick={() => setSubscriptionFilter('Professional')}
+                  size="sm"
+                  className={subscriptionFilter === 'Professional'
+                    ? 'bg-vibrant-pink text-midnight-black'
+                    : 'border-vibrant-pink/50 text-vibrant-pink hover:bg-vibrant-pink/10'
+                  }
+                >
+                  <Briefcase className="w-3 h-3 mr-1" />
+                  Professional
+                </Button>
+              </div>
             </div>
-            <div className="flex gap-2 ml-auto">
+
+            {/* Bottom Row: Sort Options */}
+            <div className="flex gap-2">
               <Button
                 variant="outline"
                 size="sm"
