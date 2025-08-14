@@ -19,6 +19,7 @@ import CampusEligibility from "./pages/CampusEligibility";
 import Login from "./pages/Login";
 import Onboarding from "./pages/Onboarding";
 import Dashboard from "./pages/Dashboard";
+import MyStats from "./pages/MyStats";
 import Challenge from "./pages/Challenge";
 import GetApp from "./pages/GetApp";
 import Privacy from "./pages/Privacy";
@@ -47,6 +48,7 @@ const App = () => (
           <Route path="/login" element={<Login />} />
           <Route path="/onboarding" element={<Onboarding />} />
           <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/my-stats" element={<MyStats />} />
           <Route path="/challenge" element={<Challenge />} />
           <Route path="/get-app" element={<GetApp />} />
           <Route path="/privacy" element={<Privacy />} />
