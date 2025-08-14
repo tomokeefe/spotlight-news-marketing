@@ -147,16 +147,38 @@ const MyStats = () => {
     }
   });
 
-  const [leaderboard, setLeaderboard] = useState<LeaderboardUser[]>([
-    { rank: 1, id: "1", name: "Sarah Chen", avatar: "SC", articlesRead: 456, challengesWon: 8, currentStreak: 42, points: 2840 },
-    { rank: 2, id: "2", name: "Alex Rivera", avatar: "AR", articlesRead: 423, challengesWon: 6, currentStreak: 28, points: 2650 },
-    { rank: 3, id: "3", name: "Jordan Smith", avatar: "JS", articlesRead: 398, challengesWon: 7, currentStreak: 35, points: 2580 },
-    { rank: 4, id: "4", name: "Demo User", avatar: "DU", articlesRead: 342, challengesWon: 3, currentStreak: 15, points: 2180, isCurrentUser: true },
-    { rank: 5, id: "5", name: "Maya Patel", avatar: "MP", articlesRead: 312, challengesWon: 4, currentStreak: 22, points: 2050 },
-    { rank: 6, id: "6", name: "Chris Johnson", avatar: "CJ", articlesRead: 289, challengesWon: 2, currentStreak: 18, points: 1920 },
-    { rank: 7, id: "7", name: "Taylor Wong", avatar: "TW", articlesRead: 267, challengesWon: 5, currentStreak: 12, points: 1840 },
-    { rank: 8, id: "8", name: "Jamie Lee", avatar: "JL", articlesRead: 245, challengesWon: 3, currentStreak: 8, points: 1720 }
+  const [allLeaderboardData] = useState<LeaderboardUser[]>([
+    { rank: 1, id: "1", name: "Sarah Chen", avatar: "SC", articlesRead: 456, challengesWon: 8, currentStreak: 42, points: 2840, subscriptionType: "Premium" },
+    { rank: 2, id: "2", name: "Alex Rivera", avatar: "AR", articlesRead: 423, challengesWon: 6, currentStreak: 28, points: 2650, subscriptionType: "Student" },
+    { rank: 3, id: "3", name: "Jordan Smith", avatar: "JS", articlesRead: 398, challengesWon: 7, currentStreak: 35, points: 2580, subscriptionType: "Professional" },
+    { rank: 4, id: "4", name: "Demo User", avatar: "DU", articlesRead: 342, challengesWon: 3, currentStreak: 15, points: 2180, subscriptionType: "Student", isCurrentUser: true },
+    { rank: 5, id: "5", name: "Maya Patel", avatar: "MP", articlesRead: 312, challengesWon: 4, currentStreak: 22, points: 2050, subscriptionType: "Non-Profit" },
+    { rank: 6, id: "6", name: "Chris Johnson", avatar: "CJ", articlesRead: 289, challengesWon: 2, currentStreak: 18, points: 1920, subscriptionType: "Premium" },
+    { rank: 7, id: "7", name: "Taylor Wong", avatar: "TW", articlesRead: 267, challengesWon: 5, currentStreak: 12, points: 1840, subscriptionType: "Professional" },
+    { rank: 8, id: "8", name: "Jamie Lee", avatar: "JL", articlesRead: 245, challengesWon: 3, currentStreak: 8, points: 1720, subscriptionType: "Student" },
+    { rank: 9, id: "9", name: "Morgan Davis", avatar: "MD", articlesRead: 228, challengesWon: 4, currentStreak: 25, points: 1650, subscriptionType: "Non-Profit" },
+    { rank: 10, id: "10", name: "Casey Brown", avatar: "CB", articlesRead: 215, challengesWon: 2, currentStreak: 14, points: 1580, subscriptionType: "Premium" },
+    { rank: 11, id: "11", name: "Quinn Wilson", avatar: "QW", articlesRead: 198, challengesWon: 3, currentStreak: 19, points: 1520, subscriptionType: "Professional" },
+    { rank: 12, id: "12", name: "River Garcia", avatar: "RG", articlesRead: 185, challengesWon: 1, currentStreak: 11, points: 1460, subscriptionType: "Student" }
   ]);
+
+  // Filter and sort leaderboard data
+  const filteredLeaderboard = React.useMemo(() => {
+    let filtered = allLeaderboardData;
+
+    // Apply subscription filter
+    if (subscriptionFilter !== 'all') {
+      filtered = filtered.filter(user => user.subscriptionType === subscriptionFilter);
+    }
+
+    // Apply campus filter (for demo, we'll treat Student as campus)
+    if (leaderboardFilter === 'campus') {
+      filtered = filtered.filter(user => user.subscriptionType === 'Student');
+    }
+
+    // Re-rank the filtered results
+    return filtered.map((user, index) => ({ ...user, rank: index + 1 }));
+  }, [subscriptionFilter, leaderboardFilter]);
 
   const [badges, setBadges] = useState<Badge[]>([
     // Earned badges
