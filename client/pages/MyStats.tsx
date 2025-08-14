@@ -529,11 +529,11 @@ const MyStats = () => {
                     <h4 className="text-lg font-semibold text-soft-gray mb-4">Weekly Progress</h4>
                     <div className="space-y-3">
                       {['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'].map((day, index) => (
-                        <div key={day} className="flex items-center justify-between">
+                        <div key={day} className="flex items-center justify-between hover:bg-gray-700/20 rounded-lg p-2 cursor-pointer transition-colors">
                           <span className="text-soft-gray/70 w-8">{day}</span>
-                          <div className="flex-1 mx-4 bg-gray-700/50 rounded-full h-2">
+                          <div className="flex-1 mx-4 bg-gray-700/50 rounded-full h-3 hover:h-4 transition-all duration-300">
                             <div
-                              className="bg-electric-blue rounded-full h-2 transition-all duration-500"
+                              className="bg-electric-blue rounded-full h-full transition-all duration-500 hover:bg-cyan-400"
                               style={{ width: `${stats.articlesRead.weeklyData[index] * 10}%` }}
                             />
                           </div>
