@@ -327,23 +327,6 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Polished Stats Bar */}
-          <div className="bg-gray-800/40 backdrop-blur-xl border border-soft-gray/10 rounded-2xl p-8">
-            <div className="grid grid-cols-3 gap-8 text-center">
-              <div className="group">
-                <div className="text-4xl font-bold text-electric-blue mb-2 group-hover:scale-110 transition-transform duration-300">250K+</div>
-                <div className="text-soft-gray/70 text-sm font-medium">Active Students</div>
-              </div>
-              <div className="group">
-                <div className="text-4xl font-bold text-neon-green mb-2 group-hover:scale-110 transition-transform duration-300">300+</div>
-                <div className="text-soft-gray/70 text-sm font-medium">Publisher Partners</div>
-              </div>
-              <div className="group">
-                <div className="text-4xl font-bold text-vibrant-pink mb-2 group-hover:scale-110 transition-transform duration-300">500+</div>
-                <div className="text-soft-gray/70 text-sm font-medium">University Partners</div>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
